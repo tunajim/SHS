@@ -2,6 +2,7 @@
   "name": "shs-website",
   "private": true,
   "version": "0.0.0",
+  "homepage": "https://tunajim.github.io/SHS/",
   "type": "module",
   "scripts": {
     "predeploy": "npm run build",

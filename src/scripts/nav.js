@@ -48,7 +48,7 @@ function toggleNav() {
 }
 
 function activateMobileNav() {
-	const mobileNav = document.querySelector("#mobile-nav");
+	const mobileNav = document.querySelector("#nav-links");
 	mobileNav.classList.add("active");
 
 	// add overlay
@@ -61,7 +61,7 @@ function activateMobileNav() {
 }
 
 function deactivateMobileNav() {
-	const mobileNav = document.querySelector("#mobile-nav");
+	const mobileNav = document.querySelector("#nav-links");
 	mobileNav.classList.remove("active");
 
 	const overlay = document.querySelector("#nav-overlay");
