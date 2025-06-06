@@ -6,6 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Students Helping Students</title>
 
+
+    <!-- Montserrat Font Import from Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
     <link rel="stylesheet" href="./src/styles/reset.css">
@@ -88,9 +94,19 @@
 
       <!-- Hero banner -->
       <div id="hero">
-        <h1>
-          <img id="banner" src="./images/cropped-SquareLogo-08.png" alt="Students Helping Students">
-        </h1>
+        <div>
+          <h1>
+            Students Helping Students
+            <!-- <img id="banner" src="./images/cropped-SquareLogo-08.png" alt="Students Helping Students"> -->
+          </h1>
+          <p>Peer-led Tech Support</p>
+
+        </div>
+
+        <!-- Google Search Embed -->
+    <script async src="https://cse.google.com/cse.js?cx=35aae8e09fb784af4">
+</script>
+<div class="gcse-search"></div>
       </div>
 
       <!-- Welcome Quote -->
@@ -119,7 +135,7 @@
         </li>
         <li>
           <img src="./images/support,help,computer,customer service,online.svg" alt="Zoom Logo" />
-          Tutorials
+          Guides
         </li>
         <li>
           <img src="./images/email,communications,mail,message,envelope,note.svg" alt="Zoom Logo" />
@@ -133,15 +149,27 @@
       <!-- Welcome -->
 
        <section id="welcome" class="padding">
-        <h2>Welcome to SHS</h2>
-        <p>
-          Thank you for visiting the Students Helping Students website.  We are a group of Student IT workers providing additional tech support for our student peers here at Washington State University, Vancouver.
-        </p>
+        <div>
+          <h2>Welcome to SHS</h2>
+          <p>
+            Thank you for visiting the Students Helping Students website.  We are a group of Student IT workers providing additional tech support for our student peers here at Washington State University, Vancouver.
+          </p>
 
-        <p>
-          <span class="bold">Our Motivation -</span>  As students, we know the importance of functional technology to get class work done.
-          We believe that as a WSU  Vancouver student, you have the right to ask for help with any of your  devices and as trained technicians, we’ll try our best to fix them.
-        </p>
+          <p>
+            <span class="bold">Our Motivation -</span>  As students, we know the importance of functional technology to get class work done.
+            We believe that as a WSU  Vancouver student, you have the right to ask for help with any of your  devices and as trained technicians, we’ll try our best to fix them.
+          </p>
+        </div>
+
+        <!-- lines -->
+        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+          <path d="M 25 72 L 25 28 L 100 28" stroke="black" fill="none" />
+          <path d="M 20 28 L 20 72 L 15 67 L 10 72 L 5 67 L 0 72" stroke="black" fill="none" />
+        
+          <!-- If you do not specify the stroke
+               color the line will not be visible -->
+        </svg>
+
       </section>
 
       <section id="services" class="padding bento-box">
@@ -179,8 +207,8 @@
        </section>
 
        <!-- Video Tutorials-->
-       <section id="tutorials" class="bento-box">
-        <h2>Video Tutorials</h2>
+       <section id="guides" class="bento-box">
+        <h2>Guides</h2>
         <div class="flex column">
 
           <!-- Swiper -->
@@ -292,30 +320,31 @@
 
         </div>
       </div>
-      <div id="socials" class="flex column footer-socials-container">
-        <h4>Follow our Socials</h4>
-        <div >
-          <a href="https://www.instagram.com/wsuvstudentshelpingstudents/" target="_blank">
-            <img class="social-icon" src="./images/instagram.png" alt="Instagram" />
-            <span class="social-background"></span>
-          </a>
-          <a href="https://www.linkedin.com/company/students-helping-students-wsu-vancouver/" target="_blank">
-            <img class="social-icon" src="./images/linkedin.png" alt="LinkedIn" />
-            <span class="social-background"></span>
-          </a>
-          <a href="https://www.facebook.com/WSUStudentsHelpingStudents/" target="_blank">
-            <img class="social-icon" src="./images/youtube.png" alt="Facebook" />
-            <span class="social-background"></span>
-          </a>
+      <div class="soc-cop-container">
+        <div id="socials" class="flex column footer-socials-container">
+          <h4>Follow our Socials</h4>
+          <div >
+            <a href="https://www.instagram.com/wsuvstudentshelpingstudents/" target="_blank">
+              <img class="social-icon" src="./images/instagram.png" alt="Instagram" />
+              <span class="social-background"></span>
+            </a>
+            <a href="https://www.linkedin.com/company/students-helping-students-wsu-vancouver/" target="_blank">
+              <img class="social-icon" src="./images/linkedin.png" alt="LinkedIn" />
+              <span class="social-background"></span>
+            </a>
+            <a href="https://www.facebook.com/WSUStudentsHelpingStudents/" target="_blank">
+              <img class="social-icon" src="./images/youtube.png" alt="Facebook" />
+              <span class="social-background"></span>
+            </a>
+          </div>
         </div>
+        <p class="copyright">© 2025 Students Helping Students WSUV</p>
       </div>
-      <p class="copyright">© 2025 Students Helping Students WSUV</p>
     </footer>
 
     <!---------------->
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="https://unpkg.com/flubber@0.3.0"></script>
 
     <!-- Custom Scripts -->
     <script type="module" src="./src/scripts/main.js"></script>

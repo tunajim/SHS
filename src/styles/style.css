@@ -1,4 +1,12 @@
 /**********************
+* Variables
+**********************/
+
+:root {
+  --header-height: 5rem; /* Adjust based on your header height */
+}
+
+/**********************
  * Custom CSS
  **********************/
 
@@ -10,6 +18,27 @@ html {
   width: 100%;
   height: 100%;
   overflow-x: hidden;
+  font-family: "Montserrat", sans-serif;
+}
+
+body {
+  position: relative;
+  overflow-x: hidden;
+}
+
+main {
+  margin-top: var(--header-height);
+}
+
+h1, h2, h3, h4, p, a {
+  font-family: "Montserrat", sans-serif;
+}
+
+h1 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: white;
 }
 
 h2 {
@@ -27,11 +56,37 @@ h4 {
   font-weight: bold;
 }
 
+p {
+  font-family: "Montserrat", sans-serif;
+}
+
 section {
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
+
+/**********************
+ * Header media queries
+ **********************/
+
+@media (min-width: 600px) {
+  h1 {
+    font-size: 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  h4 {
+    font-size: 1.25rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+}
+
+
 
 /**********************
  * Flex Styles
@@ -90,7 +145,12 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem;
+  padding: 0 1rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--header-height); /* Use the variable for header height */
 }
 
 /* Logo */
@@ -107,7 +167,7 @@ header {
  **********************/
 
 nav {
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 #nav-hamburger {
@@ -223,6 +283,10 @@ nav {
   * Nav Media Queries
   **********************/
 @media (min-width: 600px) {
+
+  :root {
+    --header-height: 100px; /* Adjust based on your header height */
+  }
   #hamburger {
     display: none;
   }
@@ -274,6 +338,7 @@ main {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  /* margin-top: var(--header-height); Adjust based on header height */
 }
 
 /**********************
@@ -282,20 +347,144 @@ main {
 
 #hero {
   width: 100%;
-  height: 200px;
+  /* height: 200px; */
   background-image: url(../../images/wsupattern-bg_3.png);
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding: 4rem;
 }
 
-#hero > h1 {
-  display: flex;
-  width: 100%;
-  height: 200px;
+#hero > div {
+  text-align: center;
+  color: white;
+}
+
+#hero > p {
+  font-size: 1rem;
+  color: white;
+  font-weight: lighter;
 }
 
 #banner {
   width: 200px;
   margin: auto;
+}
+
+/**********************
+ * Google Search
+ **********************/
+
+#___gcse_0 {
+  padding: 0 !important;
+  margin: 0 !important;
+  width: 300px;
+  background: none !important;
+  border: none !important;
+}
+
+/* Container */
+.gsc-control-cse {
+  font-family: "Montserrat", sans-serif;
+  padding: 0 !important;
+  margin: 0 !important;
+  border-radius: 6px;
+  width: 100% !important;
+  background: #272727 !important;
+  border: #5C5C5C !important;
+}
+
+.gsc-control-cse::after {
+  display: none;
+}
+
+
+.gsc-control-wrapper-cse {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100% !important;
+  background: none !important;
+}
+
+.gsc-control-wrapper-cse > form {
+  margin-top: auto !important;
+  align-items: center;
+  justify-content: center;
+  width: 100% !important;
+  background: none !important;
+}
+
+.gsc-search-box {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 4px !important;
+  background: none !important;
+}
+
+.gsc-search-box > table {
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: none !important;
+}
+
+.gsc-search-box > tbody {
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Search input box */
+.gsc-input {
+  width: 100% !important;
+  border: none !important;
+  border-radius: 4px !important;
+  /* padding: 8px !important; */
+  margin: 0 !important;
+  font-size: 15px !important;
+  background: none !important;
+}
+
+.gsc-input > div > table > tbody > tr > td > input {
+  background: none !important;
+  color: white !important;
+}
+
+.gsc-input > div > table > tbody > tr > td > input::placeholder {
+  font-weight: lighter;
+  color: white !important;
+}
+
+.gsc-input-box {
+  width: 100% !important;
+  background: none !important;
+}
+
+.gsc-input > div {
+  border: none;
+}
+
+/* Search button */
+.gsc-search-button {
+  color: white !important;
+  border: none !important;
+  /* padding: 8px 15px !important; */
+  margin: 0 !important;
+  border-radius: 4px !important;
+  cursor: pointer !important;
+  background: black !important;
+}
+
+.gsc-search-button:hover {
+  background-color: #005bb5 !important;
 }
 
 /**********************
@@ -429,18 +618,55 @@ main {
   }
 }
 
-/* Welcome */
+
+
+/**********************
+ * Services
+ **********************/
+
+#welcome > svg {
+  display: none;
+}
+
+@media (min-width: 600px) {
+  #welcome {
+    margin: auto;
+    position: relative;
+    padding: 5rem;
+  }
+
+  #welcome > div {
+    width: 500px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  #welcome > svg {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    /* background-color: rgba(255, 0, 0, 0.484); */
+    scale: 1.1;
+  }
+
+  #welcome > svg > path {
+    stroke-width: .5;
+  }
+}
 
 /* Welcome quote */
 
 #welcome-quote {
   width: 100%;
-  font-size: 1.5rem;
   padding: 3rem;
   gap: 1rem;
 }
 
 #welcome-quote > p {
+  font-size: 1.5rem;
   font-weight: bold;
 }
 
@@ -472,7 +698,7 @@ main {
  * Swiper
  **********************/
 
-#tutorials {
+#guides {
   overflow: hidden;
 }
 
@@ -536,9 +762,9 @@ main {
   margin-top: 1rem;
 }
 
-#tutorials > h2,
+#guides > h2,
 #meet-the-team > h2 {
-  padding-left: 2rem;
+  /* padding-left: 2rem; */
 }
 
 /**********************
@@ -622,6 +848,40 @@ footer > div {
   font-weight: lighter;
 }
 
+.soc-cop-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+/**********************
+ * Footer: Media Queries
+ **********************/
+
+ @media (min-width: 600px) {
+  footer {
+    padding: 2rem;
+
+    /* footer gets a flex class if in tablet size (see main.js line 103 function tabletView())*/
+    justify-content: space-between;
+  }
+
+  .fine-print {
+    gap: 2rem;
+  }
+
+
+ }
+
+ @media (min-width: 1028px) {
+  .fine-print {
+    align-items: center;
+    gap: 4rem;
+  }
+
+ }
 
 
 /**********************
@@ -631,10 +891,6 @@ footer > div {
 @media (min-width: 600px) {
   /* welcome section */
 
-  #welcome {
-    width: 500px;
-    margin: auto;
-  }
 
   #welcome-quote {
     width: 500px;
@@ -659,7 +915,7 @@ footer > div {
 
   /* Services  */
   #services {
-    background: url(../images/paralyzed-asian-employee-working-at-call-center-re-2025-02-17-05-00-47-utc.jpg);
+    background: url(../../images/paralyzed-asian-employee-working-at-call-center-re-2025-02-17-05-00-47-utc.jpg);
     background-size: cover;
   }
 
@@ -704,6 +960,8 @@ footer > div {
     margin: 10rem auto;
   }
 
+
+
   #welcome-quote {
     grid-column: 1 / span 4;
     width: 700px;
@@ -742,7 +1000,7 @@ footer > div {
   }
 
   /* Tutorials */
-  #tutorials {
+  #guides {
     grid-column: 2 / 4;
     /* overflow: hidden; */
   }
