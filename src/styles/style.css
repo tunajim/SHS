@@ -881,6 +881,10 @@ footer > div {
     gap: 4rem;
   }
 
+  footer {
+    padding: 4rem 6rem;
+  }
+
  }
 
 
