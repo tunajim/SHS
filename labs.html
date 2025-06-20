@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>SHS | Computer Labs</title>
+
+    <!-- Montserrat Font Import from Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+	<!-- styles -->
+	<link rel="stylesheet" href="./src/styles/reset.css">
+	<link rel="stylesheet" href="./src/styles/style.css">
+	<link rel="stylesheet" href="./src/styles/labs.css">
+
+
+
+	<!-- Google maps loader -->
+	<script
+		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC5xDc0ItWmUdwtFjQ-kKizGDRnp46Zjxg&libraries=maps,marker"
+		defer
+	></script>
+</head>
+<body>
+	<!-- Header  -->
+
+     <header>
+      <div id="logo"></div>
+      <nav>
+        <div id="nav-hamburger">
+          <!-- Hamburger SVG -->
+          <svg
+            class="nav-icon active"
+            id="hamburger"
+            width="36"
+            height="34"
+            viewBox="0 0 36 34"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              id="path1"
+              d="M2.5 2H33.5"
+              stroke="#4D4D4D"
+              stroke-width="4"
+              stroke-linecap="round"
+            />
+            <path
+              id="path2"
+              d="M2.5 17H33.5"
+              stroke="#4D4D4D"
+              stroke-width="4"
+              stroke-linecap="round"
+            />
+            <path
+              id="path3"
+              d="M2.5 32H33.5"
+              stroke="#4D4D4D"
+              stroke-width="4"
+              stroke-linecap="round"
+            />
+          </svg>
+
+          <!-- Exit SVG -->
+          <svg
+            id="exit-icon"
+            class="nav-icon"
+            width="60"
+            height="60"
+            viewBox="0 0 60 60"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M14.7757 44.7523L45.1665 15.1893M14.7757 15.1889L45.1665 44.7522"
+              stroke="#4D4D4D"
+              stroke-width="4"
+              stroke-linecap="round"
+            />
+          </svg>
+        </div>
+
+        <!-- nav links -->
+        <div id="nav-links">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="guides.html">Guides</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+      </nav>
+    </header>
+    <!---------------->
+
+	<!-- Main content -->
+	 <main>
+
+		<section>
+			<div>
+				<h1>Computer Labs</h1>
+				<p>
+					Welcome to the Computer Labs page! Here, you can find information about
+					the computer labs available at WSU Vancouver. Our labs are equipped with
+					the latest technology and software to support your academic needs.
+				</p>
+			</div>
+
+			<div>
+				<h3>Available Labs</h3>
+				<ul id="lab-list">
+					<li>
+						<svg class="caret" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img">
+							<polyline points="5,7 10,12 15,7" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" />
+						</svg>
+						<strong>Multimedia Classroom Building</strong> 
+					</li>
+					<section>
+
+					</section>
+					<li>
+						<svg class="caret" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img">
+							<polyline points="5,7 10,12 15,7" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" />
+						</svg>
+						<strong>Undergraduate Building</strong> 
+					</li>
+					<section>
+
+					</section>
+					<li>
+						<svg class="caret" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img">
+							<polyline points="5,7 10,12 15,7" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" />
+						</svg>
+						<strong>Engineering and Computer Science</strong> 
+					</li>
+					<section>
+
+					</section>
+				</ul>
+			</div>
+		</section>
+
+
+		<!-- Google map -->
+		<gmp-map
+			center="45.73102288279102,-122.63661048063008"
+			zoom="17"
+			map-id="lab-map"
+		>
+			<gmp-advanced-marker
+				position="45.72991418986458,-122.63591070272558"
+				title="Mountain View, CA"
+			></gmp-advanced-marker>
+			<gmp-advanced-marker
+				position="45.73042355377889,-122.63667979525182"
+				title="Seattle, WA"
+			></gmp-advanced-marker>
+			<gmp-advanced-marker
+				position="45.73262361568419,-122.63469397653841"
+				title="Seattle, WA"
+			></gmp-advanced-marker>
+		</gmp-map>
+	 </main>
+
+	 <!-- Footer -->
+    <footer>
+      <div class="fine-print flex footer-info-container">
+        <div class="flex column">
+          <h4>Contact Us</h4>
+          <p>Students Helping Students</p>
+          <p>van.student.help@wsu.edu</p>
+        </div>
+        <div>
+          <h4>Hours of Operation</h4>
+          <p>8:00 AM - 5:00 PM</p>
+          <p>Monday - Friday</p>
+
+        </div>
+      </div>
+      <div class="soc-cop-container">
+        <div id="socials" class="flex column footer-socials-container">
+          <h4>Follow our Socials</h4>
+          <div >
+            <a href="https://www.instagram.com/wsuvstudentshelpingstudents/" target="_blank">
+              <img class="social-icon" src="./images/instagram.png" alt="Instagram" />
+              <span class="social-background"></span>
+            </a>
+            <a href="https://www.linkedin.com/company/students-helping-students-wsu-vancouver/" target="_blank">
+              <img class="social-icon" src="./images/linkedin.png" alt="LinkedIn" />
+              <span class="social-background"></span>
+            </a>
+            <a href="https://www.facebook.com/WSUStudentsHelpingStudents/" target="_blank">
+              <img class="social-icon" src="./images/youtube.png" alt="Facebook" />
+              <span class="social-background"></span>
+            </a>
+          </div>
+        </div>
+        <p class="copyright">© 2025 Students Helping Students WSUV</p>
+      </div>
+    </footer>
+
+	<script type="module" src="./src/scripts/nav.js"></script>
+	<script type="module" src="./src/scripts/labs.js"></script>
+</body>
+</html>
