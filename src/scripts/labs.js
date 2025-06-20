@@ -33,7 +33,7 @@ function removeActiveClasses(list) {
 			item.firstElementChild.classList.remove("active");
 		}
 	}
-	document.body.style.height = "100%";
+	// document.body.style.height = "100%";
 
 	for(let i = 0; i < sections.length; i++) {
 		const section = sections.item(i);

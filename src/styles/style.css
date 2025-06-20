@@ -83,6 +83,15 @@ section {
   gap: 1rem;
 }
 
+.contact-link {
+  color: white;
+}
+
+.link {
+  color: var(--link-color);
+  text-decoration: none;
+}
+
 /**********************
  * Header media queries
  **********************/
