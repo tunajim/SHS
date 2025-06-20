@@ -16,7 +16,11 @@ gmp-map {
   width: 100%;
   height: 400px;
   top: 0;
+  flex: none;
+  border-radius: 12px;
   overflow: hidden;
+  border: 1px solid var(--crimson-red);
+  /* overflow: hidden; */
 }
 
 strong {
@@ -30,15 +34,13 @@ strong {
 }
 
 #lab-list section {
-	background-color: red;
-	height: 500px;
 	max-height: 0;
 	padding: 0;
 	margin: 0;
+	transition: all 0.5s ease-in-out;
 }
 
 #lab-list section.active {
-	max-height: max-content;
 }
 
 ul {
@@ -63,4 +65,8 @@ li {
 
 .caret.active {
 	rotate: 0deg;
+}
+
+.guides ul {
+	gap: 0;
 }

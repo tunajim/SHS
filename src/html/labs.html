@@ -14,6 +14,7 @@
 	<link rel="stylesheet" href="../styles/reset.css">
 	<link rel="stylesheet" href="../styles/style.css">
 	<link rel="stylesheet" href="../styles/guides.css">
+  <link rel="stylesheet" href="../styles/labs.css">
 
 
 
@@ -27,7 +28,7 @@
 	<!-- Header  -->
 
      <header>
-      <div id="logo"></div>
+      <a id="logo" href="/SHS/index.html"></a>
       <nav>
         <div id="nav-hamburger">
           <!-- Hamburger SVG -->
@@ -116,7 +117,25 @@
 						</svg>
 						<strong>Multimedia Classroom Building</strong> 
 					</li>
-					<section>
+					<section class="slide-down">
+            <h3>Multimedia Classroom Building</h3>
+            <p>
+              The Multimedia Classroom Building is equipped with state-of-the-art
+              technology to enhance your learning experience. It features high-speed
+              internet, multimedia projectors, and comfortable seating arrangements.
+            </p>
+
+            <!-- Google map -->
+            <gmp-map
+              center="45.73042355377889,-122.63667979525182"
+              zoom="18"
+              map-id="lab-map"
+            >
+              <gmp-advanced-marker
+                position="45.73042355377889,-122.63667979525182"
+                title="MMC"
+              ></gmp-advanced-marker>
+            </gmp-map>
 
 					</section>
 					<li>
@@ -125,7 +144,25 @@
 						</svg>
 						<strong>Undergraduate Building</strong> 
 					</li>
-					<section>
+					<section class="slide-down">
+            <h3>Undergraduate Building</h3>
+            <p>
+              The Undergraduate Building offers a variety of computer labs with
+              specialized software for different disciplines. Whether you need access
+              to engineering software or design tools, this building has you covered.
+            </p>
+
+            <!-- Google map -->
+            <gmp-map
+              center="45.72991418986458,-122.63591070272558"
+              zoom="17"
+              map-id="lab-map"
+            >
+              <gmp-advanced-marker
+                position="45.72991418986458,-122.63591070272558"
+                title="VUB"
+              ></gmp-advanced-marker>
+            </gmp-map>
 
 					</section>
 					<li>
@@ -134,33 +171,55 @@
 						</svg>
 						<strong>Engineering and Computer Science</strong> 
 					</li>
-					<section>
+					<section class="slide-down">
+            <h3>Engineering and Computer Science</h3>
+            <p>
+              The Engineering and Computer Science lab is designed for students in
+              technical fields. It provides access to advanced computing resources,
+              programming environments, and engineering software.
+            </p>
+
+            <!-- Google map -->
+            <gmp-map
+              center="45.73262361568419,-122.63469397653841"
+              zoom="17"
+              map-id="lab-map"
+            >
+              <gmp-advanced-marker
+                position="45.73262361568419,-122.63469397653841"
+                title="Seattle, WA"
+              ></gmp-advanced-marker>
+            </gmp-map>
 
 					</section>
 				</ul>
 			</div>
 		</section>
+		<section class="guides">
+			<div>
+				<h3>Featured Guides</h3>
+				<ul>
+					<li><a href="wifi.html">Wifi Access</a></li>
+					<li><a href="microsoft.html">Microsoft Suite Installation</a></li>
+					<li><a href="account-access.html">Account Access</a></li>
+					<li><a href="labs.html" class="active">Computer Labs</a></li>
+				</ul>	
+			</div>
+			<div>
+				<h3>Video Guides</h3>
+				<ul>
+					<li><a target="_blank" href="https://www.youtube.com/watch?v=V_nNkaQ5YdI">Set up OKTA Verify</a></li>
+					<li><a target="_blank" href="https://www.youtube.com/watch?v=qM3mOsV9dCA&t=1s">Install Global Protect</a></li>
+					<li><a target="_blank" href="https://www.youtube.com/watch?v=QIOkqtz2kkQ">Enrolling in Classes</a></li>
+					<li><a target="_blank" href="https://www.youtube.com/watch?v=T-GPSdqM0KU">Create Daily Attestation</a></li>
+					<li><a target="_blank" href="https://www.youtube.com/watch?v=SHXLXqsaXx8&t=1s">Navigating the WSU Site</a></li>
+					<li><a target="_blank" href="https://www.youtube.com/watch?v=G3Z35tu-6Ho">Change your Password</a></li>
+				</ul>
+			</div>
+
+		</section>
 
 
-		<!-- Google map -->
-		<gmp-map
-			center="45.73102288279102,-122.63661048063008"
-			zoom="17"
-			map-id="lab-map"
-		>
-			<gmp-advanced-marker
-				position="45.72991418986458,-122.63591070272558"
-				title="Mountain View, CA"
-			></gmp-advanced-marker>
-			<gmp-advanced-marker
-				position="45.73042355377889,-122.63667979525182"
-				title="Seattle, WA"
-			></gmp-advanced-marker>
-			<gmp-advanced-marker
-				position="45.73262361568419,-122.63469397653841"
-				title="Seattle, WA"
-			></gmp-advanced-marker>
-		</gmp-map>
 	 </main>
 
 	 <!-- Footer -->
@@ -168,8 +227,8 @@
       <div class="fine-print flex footer-info-container">
         <div class="flex column">
           <h4>Contact Us</h4>
-          <p>Students Helping Students</p>
-          <p>van.student.help@wsu.edu</p>
+          <p><a href="tel:+3605469770" class="contact-link">(360) 546-9770</a></p>
+          <p><a href="mailto:van.student.help@wsu.edu" class="contact-link">van.student.help@wsu.edu</a></p>
         </div>
         <div>
           <h4>Hours of Operation</h4>
@@ -183,15 +242,15 @@
           <h4>Follow our Socials</h4>
           <div >
             <a href="https://www.instagram.com/wsuvstudentshelpingstudents/" target="_blank">
-              <img class="social-icon" src="./images/instagram.png" alt="Instagram" />
+              <img class="social-icon" src="../../images/instagram.png" alt="Instagram" />
               <span class="social-background"></span>
             </a>
             <a href="https://www.linkedin.com/company/students-helping-students-wsu-vancouver/" target="_blank">
-              <img class="social-icon" src="./images/linkedin.png" alt="LinkedIn" />
+              <img class="social-icon" src="../../images/linkedin.png" alt="LinkedIn" />
               <span class="social-background"></span>
             </a>
             <a href="https://www.facebook.com/WSUStudentsHelpingStudents/" target="_blank">
-              <img class="social-icon" src="./images/youtube.png" alt="Facebook" />
+              <img class="social-icon" src="../../images/youtube.png" alt="Facebook" />
               <span class="social-background"></span>
             </a>
           </div>
