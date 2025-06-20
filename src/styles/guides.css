@@ -1,0 +1,82 @@
+* {
+	font-family: "Montserrat", sans-serif;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  width: 100%;
+}
+
+h1 {
+	color: black;
+}
+
+a {
+	color: var(--link-color);
+}
+
+ol {
+  list-style-type: decimal;
+  padding-left: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+ol > li {
+	width: 200px;
+	/* display: flex; */
+	flex-direction: column;
+}
+
+ol > li::marker {
+  font-weight: bold;
+}
+
+h5 {
+	margin-top: 2rem;
+}
+
+a.active {
+	color: var(--crimson-red);
+}
+
+.main-button {
+	margin-top: 1rem;
+}
+
+
+@media (min-width: 700px) {
+	ol {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+		row-gap: 2rem;
+		/* grid-template-columns: repeat(auto-fill, 1fr); */
+		border-radius: 4px;
+		padding: 2rem;
+	}
+
+	ol > li {
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.guides {
+		
+	}
+}
+
+@media (min-width: 900px) {
+	main {
+		height: auto;
+	}
+
+	ol {
+		column-gap: 3rem;
+		row-gap: 3rem;
+	}
+
+}

@@ -26,7 +26,7 @@ setTimeout(() => {
 const screenSizes = {
   mobile: 320,
   tablet: 600,
-  desktop: 1024,
+  desktop: 900,
 };
 
 const screenSizeIs = {
@@ -46,7 +46,10 @@ function handleScreenSize(e) {
 }
 
 function setScreenSize(e) {
-  const sW = e.target.innerWidth;
+  console.log(e.currentTarget.innerWidth);
+  const sW = e.currentTarget.innerWidth;
+
+  console.log(`Screen width: ${sW}px`);
 
   // Reset all screen size flags
   screenSizeIs.mobile = false;
@@ -57,6 +60,8 @@ function setScreenSize(e) {
   screenSizeIs.mobile = sW < screenSizes.tablet;
   screenSizeIs.tablet = sW >= screenSizes.tablet && sW < screenSizes.desktop;
   screenSizeIs.desktop = sW >= screenSizes.desktop;
+
+  console.log({screenSizeIs})
 }
 
 function checkScreenSize() {
@@ -69,18 +74,7 @@ function checkScreenSize() {
   }
 }
 
-function mobileView() {
-  const footer = document.querySelector("footer");
-
-  // if footer does not have column class, it means we are sizing the screen down
-  if (!footer.classList.contains("column")) {
-    console.log("Adding column class to footer");
-    footer.classList.add("column");
-
-    const fineprint = document.querySelector(".fine-print");
-    fineprint.classList.remove("column");
-  }
-}
+function mobileView() {}
 
 function tabletView() {
   console.log("Tablet view detected");
@@ -103,4 +97,93 @@ function desktopView() {
 
   const fineprint = document.querySelector(".fine-print");
   fineprint.classList.remove("column");
+}
+
+/**
+ * Quick link activator
+ * * When user clicks on a quick link button, it will activate the proper information
+ * * info will expand down, underneath the button.
+ *
+ */
+
+const quickLinks = document
+  .querySelector("#quick-links")
+  .getElementsByTagName("ul")[0].children;
+
+/**
+ * Add event listeners to each quick link
+ * * When a quick link is clicked, it will slide the associated section down
+ * * If the section is already active, it will collapse it
+ * * If another section is active, it will collapse that section first
+ */
+const quickLinksContainer = document.querySelector("#quick-links");
+
+for (let i = 0; i < quickLinks.length; i++) {
+  quickLinks.item(i).addEventListener("click", (e) => {
+
+    // we have to take height 100% off of body, when the quicklinks are active
+    document.body.style.height = "auto";
+
+    console.log(e.target);
+
+    if (e.target.className === "active") {
+      removeActiveClasses(quickLinks);
+      return;
+    }
+
+    removeActiveClasses(quickLinks);
+    const width = window.innerWidth;
+    console.log(e.target);
+    if (e.target.tagName === "SECTION") {
+      return;
+    }
+    const info = e.target.nextElementSibling;
+    e.target.classList.add("active");
+
+    if (info.tagName === "SECTION") {
+      if (info.classList.contains("active")) {
+        document.body.style.height = "100%";
+        info.classList.remove("active");
+        info.style.maxHeight = null;
+      } else {
+        info.classList.add("active");
+        info.style.maxHeight = info.scrollHeight + "px";
+
+        const heightBuffer = (info.id === "contact" || info.id === "guides") ? 100 : 60;
+        console.log(info.id);
+
+        if(screenSizeIs.desktop) {
+          setTimeout(() => {
+            document.body.style.height = "auto";
+          }, 500);
+          quickLinksContainer.classList.add("active");
+          quickLinksContainer.style.paddingBottom +=
+            info.scrollHeight + heightBuffer + "px";
+        }
+      }
+    }
+  });
+}
+
+function removeActiveClasses(quickLinks) {
+
+  // reset the body height
+  document.body.style.height = "100%";
+
+  for (let i = 0; i < quickLinks.length; i++) {
+    const info = quickLinks.item(i);
+    if (info) {
+      if (info.classList.contains("active")) {
+        info.classList.remove("active");
+      }
+
+      if (info.tagName === "SECTION") {
+        // Reset the max height to null to collapse the section
+        info.style.maxHeight = null;
+      }
+    }
+  }
+
+  quickLinksContainer.classList.remove("active");
+  quickLinksContainer.style.paddingBottom = null;
 }
