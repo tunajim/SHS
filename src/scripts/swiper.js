@@ -1,4 +1,4 @@
-import Swiper from "swiper";
+// import Swiper from "swiper";
 import { Navigation, Pagination, EffectCoverflow } from "swiper/modules";
 // import Swiper and modules styles
 // import "swiper/css";
