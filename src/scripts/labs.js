@@ -61,9 +61,6 @@ function collapseSections(e, active) {
 function expandSections(e, active) {
 	// section is the next element sibling of the clicked item
 	const section = e.target.nextElementSibling;
-	console.log(active);
-
-	console.log(section);
 	if (section) {
 		if (active) {
 			section.classList.remove("active");
@@ -71,7 +68,6 @@ function expandSections(e, active) {
 		} else {
 			section.classList.add("active");
 			section.style.maxHeight = section.scrollHeight + "px";
-			document.body.style.height = "auto";
 		}
 	}
 }
