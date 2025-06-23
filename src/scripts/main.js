@@ -122,7 +122,7 @@ for (let i = 0; i < quickLinks.length; i++) {
   quickLinks.item(i).addEventListener("click", (e) => {
 
     // we have to take height 100% off of body, when the quicklinks are active
-    document.body.style.height = "auto";
+    // document.body.style.height = "auto";
 
     console.log(e.target);
 
@@ -142,7 +142,6 @@ for (let i = 0; i < quickLinks.length; i++) {
 
     if (info.tagName === "SECTION") {
       if (info.classList.contains("active")) {
-        document.body.style.height = "100%";
         info.classList.remove("active");
         info.style.maxHeight = null;
       } else {
@@ -154,7 +153,7 @@ for (let i = 0; i < quickLinks.length; i++) {
 
         if(screenSizeIs.desktop) {
           setTimeout(() => {
-            document.body.style.height = "auto";
+            // document.body.style.height = "auto";
           }, 500);
           quickLinksContainer.classList.add("active");
           quickLinksContainer.style.paddingBottom +=
@@ -166,10 +165,6 @@ for (let i = 0; i < quickLinks.length; i++) {
 }
 
 function removeActiveClasses(quickLinks) {
-
-  // reset the body height
-  document.body.style.height = "100%";
-
   for (let i = 0; i < quickLinks.length; i++) {
     const info = quickLinks.item(i);
     if (info) {

@@ -71,7 +71,11 @@ a.active {
 
 @media (min-width: 900px) {
 	main {
-		height: auto;
+		justify-content: start;
+	}
+
+	section {
+		width: 800px;
 	}
 
 	ol {
