@@ -89,7 +89,7 @@
             <li><a href="/SHS/">Home</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="guides.html">Guides</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="contact.html">Contact</a></li>
           </ul>
       </nav>
     </header>
@@ -98,7 +98,14 @@
 	<!-- Main content -->
 	 <main>
 
-		<section>
+    <!-- 
+         There are 3 labs in VUB
+        1. VUB 100
+        2. VUB 202 
+        3. VUB 207
+      -->
+
+		<section class="lab-section">
 			<div>
 				<h1>Computer Labs</h1>
 				<p>
@@ -125,18 +132,20 @@
               internet, multimedia projectors, and comfortable seating arrangements.
             </p>
 
-            <!-- Google map -->
-            <gmp-map
-              center="45.73042355377889,-122.63667979525182"
-              zoom="18"
-              map-id="lab-map"
-            >
-              <gmp-advanced-marker
-                position="45.73042355377889,-122.63667979525182"
-                title="MMC"
-              ></gmp-advanced-marker>
-            </gmp-map>
-
+            <div>
+              <h4>Location</h4>
+              <!-- Google map -->
+              <gmp-map
+                center="45.73042355377889,-122.63667979525182"
+                zoom="18"
+                map-id="lab-map"
+              >
+                <gmp-advanced-marker
+                  position="45.73042355377889,-122.63667979525182"
+                  title="MMC"
+                ></gmp-advanced-marker>
+              </gmp-map>
+            </div>
 					</section>
 					<li>
 						<svg class="caret" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img">
@@ -145,24 +154,60 @@
 						<strong>Undergraduate Building</strong> 
 					</li>
 					<section class="slide-down">
-            <h3>Undergraduate Building</h3>
-            <p>
-              The Undergraduate Building offers a variety of computer labs with
-              specialized software for different disciplines. Whether you need access
-              to engineering software or design tools, this building has you covered.
-            </p>
+            <div>
+              <h3>Undergraduate Building</h3>
+              <p>
+                The Undergraduate Building offers a variety of computer labs with
+                specialized software for different disciplines. There are a total of
+                3 labs available to students in this building
+              </p>
+            </div>
+            <div class="lab-images">
+              <div>
+                <h4>VUB 100</h4>
+                <!-- lab image -->
+                <img
+                  src="../../images/labs/vub-100.jpg"
+                  alt="Multimedia Classroom Building"
+                  class="lab-image float-right"
+                />
+              </div>
+              <div>
+                <h4>VUB 202</h4>
+                <!-- lab image -->
+                <img
+                  src="../../images/labs/vub-202.jpg"
+                  alt="Multimedia Classroom Building"
+                  class="lab-image"
+                />
+              </div>
+              <div>
+                <h4>VUB 207</h4>
+                <!-- lab image -->
+                <img
+                  src="../../images/labs/vub-207.jpg"
+                  alt="Multimedia Classroom Building"
+                  class="lab-image"
+                />
 
-            <!-- Google map -->
-            <gmp-map
-              center="45.72991418986458,-122.63591070272558"
-              zoom="17"
-              map-id="lab-map"
-            >
-              <gmp-advanced-marker
-                position="45.72991418986458,-122.63591070272558"
-                title="VUB"
-              ></gmp-advanced-marker>
-            </gmp-map>
+              </div>
+            </div>
+
+            <div>
+              <h4>Location</h4>
+              <!-- Google map -->
+              <gmp-map
+                center="45.72991418986458,-122.63591070272558"
+                zoom="17"
+                map-id="lab-map"
+              >
+                <gmp-advanced-marker
+                  position="45.72991418986458,-122.63591070272558"
+                  title="VUB"
+                ></gmp-advanced-marker>
+              </gmp-map>
+
+            </div>
 
 					</section>
 					<li>
@@ -179,17 +224,21 @@
               programming environments, and engineering software.
             </p>
 
-            <!-- Google map -->
-            <gmp-map
-              center="45.73262361568419,-122.63469397653841"
-              zoom="17"
-              map-id="lab-map"
-            >
-              <gmp-advanced-marker
-                position="45.73262361568419,-122.63469397653841"
-                title="Seattle, WA"
-              ></gmp-advanced-marker>
-            </gmp-map>
+            <div>
+              <h4>Location</h4>
+              <!-- Google map -->
+              <gmp-map
+                center="45.73262361568419,-122.63469397653841"
+                zoom="17"
+                map-id="lab-map"
+              >
+                <gmp-advanced-marker
+                  position="45.73262361568419,-122.63469397653841"
+                  title="Seattle, WA"
+                ></gmp-advanced-marker>
+              </gmp-map>
+
+            </div>
 
 					</section>
 				</ul>

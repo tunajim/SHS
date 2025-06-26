@@ -179,6 +179,17 @@ function removeActiveClasses(quickLinks) {
     }
   }
 
+
+  // loop through all children and all of the childrens children and remove active
+  const children = quickLinksContainer.children;
+  for (let i = 0; i < children.length; i++) {
+    const child = children.item(i);
+    if (child) {
+      child.classList.remove("active");
+    }
+  }
+
+
   quickLinksContainer.classList.remove("active");
   quickLinksContainer.style.paddingBottom = null;
 }

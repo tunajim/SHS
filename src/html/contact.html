@@ -1,18 +1,34 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>SHS | Guides</title>
+	<title>SHS | Contact Us</title>
 
     <!-- Montserrat Font Import from Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
+    <!-- Swiper -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
 	<link rel="stylesheet" href="../styles/reset.css">
 	<link rel="stylesheet" href="../styles/style.css">
-	<link rel="stylesheet" href="../styles/guides.css">
+	<link rel="stylesheet" href="../styles/about.css">
+	<link rel="stylesheet" href="../styles/contact.css">
+	<!-- import map -->
+	 <script type="inputmap">
+		{
+			"imports": {
+				"swiper": "https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js",
+				"swiper/css": "https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+			}
+		}
+	 </script>
+
+
 </head>
 <body>
     <!-- Header  -->
@@ -78,7 +94,7 @@
           <ul>
             <li><a href="/SHS/">Home</a></li>
             <li><a href="about.html">About</a></li>
-            <li><a href="/SHS/src/html/guides.html">Guides</a></li>
+            <li><a href="guides.html">Guides</a></li>
             <li><a href="contact.html">Contact</a></li>
           </ul>
       </nav>
@@ -86,27 +102,38 @@
     <!---------------->
 
 	<main>
-		<section id="guides">
-			<h1>Guides</h1>
-			<p>Welcome to our guides section! Here, you'll find a collection of helpful resources and tutorials to assist you in various aspects of your journey. Whether you're looking for step-by-step instructions, tips and tricks, or in-depth explanations, we've got you covered.</p>
-
-			<h2>Featured Guides</h2>
-			<ul>
-				<li><a href="/SHS/src/html/wifi.html">Wifi Access</a></li>
-				<li><a href="/SHS/src/html/microsoft.html">Microsoft Suite Installation</a></li>
-				<li><a href="/SHS/src/html/account-access.html">Account Access</a></li>
-				<li><a href="/SHS/src/html/labs.html">Computer Labs</a></li>
-			</ul>	
-
-			<h2>Video Guides</h2>
-			<ul>
-				<li><a target="_blank" href="https://www.youtube.com/watch?v=V_nNkaQ5YdI">Set up OKTA Verify</a></li>
-				<li><a target="_blank" href="https://www.youtube.com/watch?v=qM3mOsV9dCA&t=1s">Install Global Protect</a></li>
-				<li><a target="_blank" href="https://www.youtube.com/watch?v=QIOkqtz2kkQ">Enrolling in Classes</a></li>
-				<li><a target="_blank" href="https://www.youtube.com/watch?v=T-GPSdqM0KU">Create Daily Attestation</a></li>
-				<li><a target="_blank" href="https://www.youtube.com/watch?v=SHXLXqsaXx8&t=1s">Navigating the WSU Site</a></li>
-				<li><a target="_blank" href="https://www.youtube.com/watch?v=G3Z35tu-6Ho">Change your Password</a></li>
-			</ul>
+		<h1>Contact Us</h1>
+		<section class="contact-card-container">
+			<div class="contact-card">
+				<h2>Call Us</h2>
+				<p>Want to chat on the phone? We have tech's waiting by to provide you assistance.</p>
+				<p class="contact-link"><a href="tel:+3605469770">(360) 546-9770</a></p>
+        <a href="tel:+3605469770">
+				  <button class="main-button">Call Us</button>
+        </a>
+			</div>
+			<div class="contact-card">
+				<h2>Email Us</h2>
+				<p>Our technicians are monitoring our emails and will respond as soon as possible!</p>
+        <p class="contact-link"><a href="mailto:van.student.help@wsu.edu">van.student.help@wsu.edu</a></p>
+        <a href="mailto:van.student.help@wsu.edu">
+				  <button class="main-button">Email Us</button>
+        </a>
+			</div>
+			<div class="contact-card">
+				<h2>Zoom Helpdesk</h2>
+				<p>If you need immediate help or you have an account related issue, join our Zoom Helpdesk!</p>
+        <a href="https://wsu.zoom.us/j/3605469770?pwd=ZEhtcXpQVnFnQk5YM0ZqWk44VEpmUT09" target="_blank">
+				  <button class="main-button">Join Helpdesk</button>
+        </a>
+			</div>
+			<div class="contact-card">
+				<h2>Appointments</h2>
+				<p>In a rush? Set an appointment up to meet at a later time!</p>
+        <a href="https://outlook.office365.com/book/StudentsHelpingStudents1@email.wsu.edu/?ismsaljsauthenabled=true">
+				  <button class="main-button">Make an Appointment</button>
+        </a>
+			</div>
 		</section>
 
 	</main>
@@ -148,8 +175,11 @@
       </div>
     </footer>
 
-
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 	
+	<!-- Custom -->
     <script type="module" src="../scripts/nav.js"></script>
+    <script type="module" src="../scripts/swiper.js"></script>
 </body>
 </html>

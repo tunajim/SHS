@@ -7,7 +7,7 @@ h1 {
 	display: block;
 }
 
-section {
+.lab-section {
 	padding: 1rem;
 }
 
@@ -37,6 +37,8 @@ strong {
 	padding: 0;
 	margin: 0;
 	transition: all 0.5s ease-in-out;
+	display: flex;
+	gap: 2rem;
 }
 
 #lab-list section.active {
@@ -68,4 +70,40 @@ li {
 
 .guides ul {
 	gap: 0;
+}
+
+/* lab images */
+.lab-images {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+
+.lab-image {
+	width: 100%;
+	height: auto;
+	border-radius: 12px;
+	border: 1px solid var(--crimson-red);
+}
+
+@media (min-width: 600px) {
+	.lab-section {
+		padding: 2rem;
+		margin: auto;	
+	}
+	.guides {
+		margin: auto;
+	}
+
+	.lab-images {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 1rem;
+	}
+
+	.lab-images:nth-child(1) {
+		background-color: red;
+		grid-row: 1 / span 2;
+	}
+
 }
