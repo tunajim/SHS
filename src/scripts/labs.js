@@ -1,4 +1,4 @@
-console.log("WORKING");
+console.log("Labs script loaded");
 
 const list = document.querySelector("#lab-list").getElementsByTagName("li");
 const sections = document.querySelector("#lab-list").getElementsByTagName("section");
@@ -9,11 +9,35 @@ console.log(sections);
 for (let i = 0; i < list.length; i++) {
   const item = list.item(i);
   if (item) {
-	item.addEventListener("click", labClicked);
+	item.addEventListener("mouseup", labClicked);
+	item.addEventListener("focus", labClicked);
   }
 }
 
+let lastInteractionType = null;
+
+// Listen for keyboard interactions (tab)
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Tab') {
+    lastInteractionType = 'keyboard';
+  }
+});
+
+// Listen for mouse interactions
+document.addEventListener('mousedown', () => {
+  lastInteractionType = 'mouse';
+});
+
+
 function labClicked(e) {
+
+	
+	// When user clicks a quick link, the focus event is triggered
+	// If the last interaction was a mouse click, ignore the focus event
+	if( e.type === "focus" && lastInteractionType === 'mouse') {
+		return;
+	}
+
 	const el = e.target;
 	const active = el.classList.contains("active");
 	removeActiveClasses(list); 

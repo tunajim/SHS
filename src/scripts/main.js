@@ -1,12 +1,10 @@
-function handleVideo(e) {
-  console.log("Video clicked");
-}
-
-const video = document.querySelectorAll(".video-slide");
-
-video.forEach((vid) => {
-  vid.addEventListener("click", handleVideo);
-});
+/**********************************************
+ * This script is responsible for:
+ * 1. Changing the placeholder text of the Google Search embed
+ * 2. Detecting screen size and applying responsive design classes
+ * 3. Handling quick link drop-down functionality
+ **********************************************/
+console.log("Main script loaded");
 
 /**********************************************
  * After page loads, we have to manually find the Google Search embed
@@ -61,7 +59,7 @@ function setScreenSize(e) {
   screenSizeIs.tablet = sW >= screenSizes.tablet && sW < screenSizes.desktop;
   screenSizeIs.desktop = sW >= screenSizes.desktop;
 
-  console.log({screenSizeIs})
+  console.log({ screenSizeIs });
 }
 
 function checkScreenSize() {
@@ -100,69 +98,129 @@ function desktopView() {
 }
 
 /**
- * Quick link activator
- * * When user clicks on a quick link button, it will activate the proper information
- * * info will expand down, underneath the button.
- *
+ * @description Quick link drop-down functionality
+ * 1. Get all quick links from the DOM
+ * 2. Add event listeners to each quick link
+ * 3. Toggle the active state of quick links and their associated sections
+ * 4. Remove active classes when a quick link is clicked again
+ * 5. Collapse sections when quick links are toggled
+ * 6. Adjust padding and max-height for sections based on screen size
  */
 
 const quickLinks = document
   .querySelector("#quick-links")
   .getElementsByTagName("ul")[0].children;
 
+let lastInteractionType = null;
+
+// Listen for keyboard interactions (tab)
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Tab') {
+    lastInteractionType = 'keyboard';
+  }
+});
+
+// Listen for mouse interactions
+document.addEventListener('mousedown', () => {
+  lastInteractionType = 'mouse';
+});
+
+
 /**
- * Add event listeners to each quick link
- * * When a quick link is clicked, it will slide the associated section down
- * * If the section is already active, it will collapse it
- * * If another section is active, it will collapse that section first
+ * add an event listener for each quick link to listen for clicks
+ *
  */
+
 const quickLinksContainer = document.querySelector("#quick-links");
 
 for (let i = 0; i < quickLinks.length; i++) {
-  quickLinks.item(i).addEventListener("click", (e) => {
+  quickLinks.item(i).addEventListener("mouseup", toggleQuickLinks);
+  quickLinks.item(i).addEventListener("focus", toggleQuickLinks);
+  //add focus event listener to each quick link
+}
 
-    // we have to take height 100% off of body, when the quicklinks are active
-    // document.body.style.height = "auto";
 
-    console.log(e.target);
+/**
+ * @name toggleQuickLinks
+ * @description Toggles the active state of quick links and their associated sections.
+ * @param {Event} e - The click event on the quick link.
+ * @returns {void}
+ *
+ */
+function toggleQuickLinks(e) {
 
-    if (e.target.className === "active") {
-      removeActiveClasses(quickLinks);
-      return;
-    }
 
+  // When user clicks a quick link, the focus event is triggered
+  // If the last interaction was a mouse click, ignore the focus event
+  if( e.type === "focus" && lastInteractionType === 'mouse') {
+    return;
+  }
+
+  // check if the clicked element is already active
+  // if it is, remove the active class and collapse the section
+  if (e.target.className === "active") {
     removeActiveClasses(quickLinks);
-    const width = window.innerWidth;
-    console.log(e.target);
-    if (e.target.tagName === "SECTION") {
-      return;
-    }
-    const info = e.target.nextElementSibling;
+    return;
+  }
+
+  // If not, remove all active classes to collapse any open sections
+  removeActiveClasses(quickLinks);
+  const width = window.innerWidth;
+
+  // 
+  const parentElement = e.target.parentElement;
+  const grandParentElement = e.target.parentElement.parentElement;
+
+  // if (parentElement && parentElement.classList.contains("slide-down")) {
+  //   return;
+  // }
+
+  // if(grandParentElement && grandParentElement.classList.contains("slide-down")) {
+  //   return;
+  // }
+
+
+  // If the clicked element is a section, do nothing
+  // This prevents the following logic from breaking
+  if (e.target.tagName === "SECTION") {
+    return;
+  }
+
+  // If the clicked element is not a section, it means we have clicked a list item/link
+  const info = e.target.nextElementSibling;
+
+
+  // activate the clicked element
+  if (!e.target.classList.contains("no-click"))
     e.target.classList.add("active");
 
-    if (info.tagName === "SECTION") {
-      if (info.classList.contains("active")) {
-        info.classList.remove("active");
-        info.style.maxHeight = null;
-      } else {
-        info.classList.add("active");
-        info.style.maxHeight = info.scrollHeight + "px";
+  // only manipulate info if it is indeed a section
+  if (info.tagName === "SECTION") {
+    if (info.classList.contains("active")) {
+      info.classList.remove("active");
+      info.style.maxHeight = null;
+    } else {
+      info.classList.add("active");
+      info.style.maxHeight = info.scrollHeight + "px";
 
-        const heightBuffer = (info.id === "contact" || info.id === "guides") ? 100 : 60;
-        console.log(info.id);
+      const heightBuffer =
+        info.id === "contact" || info.id === "guides" ? 100 : 60;
 
-        if(screenSizeIs.desktop) {
-          setTimeout(() => {
-            // document.body.style.height = "auto";
-          }, 500);
-          quickLinksContainer.classList.add("active");
-          quickLinksContainer.style.paddingBottom +=
-            info.scrollHeight + heightBuffer + "px";
-        }
+      if (screenSizeIs.desktop) {
+        quickLinksContainer.classList.add("active");
+        quickLinksContainer.style.paddingBottom +=
+          info.scrollHeight + heightBuffer + "px";
       }
     }
-  });
+  }
 }
+
+/**
+ * @name removeActiveClasses
+ * @description Removes active classes from all quick links and collapses their sections.
+ * @param {HTMLCollection} quickLinks - The collection of quick link elements.
+ * @returns {void}
+ */
 
 function removeActiveClasses(quickLinks) {
   for (let i = 0; i < quickLinks.length; i++) {
@@ -179,7 +237,6 @@ function removeActiveClasses(quickLinks) {
     }
   }
 
-
   // loop through all children and all of the childrens children and remove active
   const children = quickLinksContainer.children;
   for (let i = 0; i < children.length; i++) {
@@ -188,7 +245,6 @@ function removeActiveClasses(quickLinks) {
       child.classList.remove("active");
     }
   }
-
 
   quickLinksContainer.classList.remove("active");
   quickLinksContainer.style.paddingBottom = null;

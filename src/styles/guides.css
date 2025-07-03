@@ -49,6 +49,10 @@ a.active {
 }
 
 
+/**********************
+ * Media Queries
+ **********************/
+
 @media (min-width: 700px) {
 	ol {
 		display: grid;

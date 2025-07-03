@@ -6,7 +6,7 @@
   --header-height: 5rem; /* Adjust based on your header height */
   --crimson-red: #a60f2d;
   --pacific-sky: #5BC3F5;
-  --link-color: #3081EA;
+  --link-color: #005cbe;
   --gray: #4d4d4d;
 }
 
@@ -17,6 +17,8 @@
 /**********************
  * Custom CSS
  **********************/
+
+ /* Generic Styles */
 
 * {
   box-sizing: border-box;
@@ -41,13 +43,19 @@ html, body {
   height: 100%;
 }
 
-main {
-  margin-top: var(--header-height);
-  margin-bottom: 1rem;
-  flex: 1;
-  align-items: center;
-  justify-content: center;
+section {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
+
+.announcement {
+  border: 1px solid var(--crimson-red);
+  border-radius: 12px;
+  padding: 1rem;
+}
+
+/* Headers */
 
 h1, h2, h3, h4, p, a {
   font-family: "Montserrat", sans-serif;
@@ -75,6 +83,7 @@ h4 {
   font-weight: bold;
 }
 
+
 p {
   font-family: "Montserrat", sans-serif;
 }
@@ -83,23 +92,8 @@ a {
   text-decoration: none;
 }
 
-section {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.contact-link {
-  color: white;
-}
-
-.link {
-  color: var(--link-color);
-  text-decoration: none;
-}
-
 /**********************
- * Header media queries
+ * Headers/Paragraph media queries
  **********************/
 
 @media (min-width: 600px) {
@@ -117,6 +111,17 @@ section {
     font-size: 1rem;
   }
 }
+
+
+.contact-link {
+  color: white;
+}
+
+.link {
+  color: var(--link-color);
+  text-decoration: none;
+}
+
 
 
 
@@ -161,6 +166,10 @@ section {
   font-weight: bold;
 }
 
+.italic {
+  font-style: italic;
+}
+
 /**********************
  * Generic buttons
  **********************/
@@ -178,8 +187,13 @@ section {
   cursor: pointer;
 }
 
+.main-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--pacific-sky);
+}
+
 /**********************
- * Header
+ * Header section
  **********************/
 
 header {
@@ -196,20 +210,25 @@ header {
   height: var(--header-height); /* Use the variable for header height */
 }
 
+/* Logo */
+
+#logo {
+  width: 50px;
+  height: 50px;
+  background-image: url(../../images/SHS.svg);
+  background-size: contain;
+}
+
+
+/**********************
+ * Header Media Queries
+ **********************/
 @media (min-width: 600px) {
   header {
     padding: 0 2rem;
   }
 }
 
-/* Logo */
-
-#logo {
-  width: 50px;
-  height: 50px;
-  background-image: url(../../images/logo-150x150.png);
-  background-size: contain;
-}
 
 /**********************
  * Nav
@@ -258,6 +277,7 @@ nav {
   z-index: 4;
 }
 
+/* ul is the list container for the nav links */
 #nav-links > ul {
   margin: auto;
   text-align: left;
@@ -266,6 +286,7 @@ nav {
   gap: 1rem;
 }
 
+/* referencing the anchor tags for nav links */
 #nav-links > ul > li > a {
   color: black;
   text-decoration: none;
@@ -298,6 +319,11 @@ nav {
 }
 
 /* Hamburger */
+/* 
+  The hamburger icon and exit icon will alternate visibility when pressed.
+  The hamburger icon will be visible when the nav is closed, and the exit icon will be visible when the nav is open.
+  See nav.js for the logic to toggle the visibility of these icons. 
+*/
 
 #hamburger {
   width: 40px;
@@ -383,6 +409,14 @@ main {
   gap: 1rem;
   flex: 1;
   /* margin-top: var(--header-height); Adjust based on header height */
+}
+
+main {
+  margin-top: var(--header-height);
+  margin-bottom: 1rem;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
 }
 
 /**********************
@@ -593,10 +627,6 @@ main {
 }
 
 /* icons */
-/* #quick-links > ul > li > img {
-  display: none;
-  pointer-events: none;
-} */
 
 #quick-links .ql-icon {
   display: none;
@@ -641,7 +671,6 @@ main {
 #quick-links > ul > li.active {
   border: 2px solid var(--pacific-sky);
   font-size: 1.2rem;
-  /* color: var(--pacific-sky); */
 }
 
 
@@ -649,22 +678,9 @@ main {
 /**********************
   * Quick Links: Media Queries
   **********************/
-@media (min-width: 600px) {
-  /* quick links */
-  #quick-links {
-    /* margin: auto; */
-  }
 
-  #quick-links > ul {
-    /* display: grid;
-    grid-template-columns: 1fr 1fr; */
-  }
-  #quick-links > ul > li:nth-child(1) {
-    grid-column: 1 / span 2;
-  }
 
-}
-
+/* transition from vertical display to horizontal */
 @media (min-width: 900px) {
   #quick-links {
     position: relative;
@@ -675,10 +691,6 @@ main {
     margin: auto;
     /* height: 100%; */
     transition: all 0.3s ease-in-out; 
-  }
-
-  #quick-links.active {
-
   }
 
   #quick-links::after {
@@ -771,9 +783,9 @@ main {
   }
 
 
-  /* helpdesk links: will be centered */
+  /* Zoom Helpdesk link reference */
   #quick-links > ul > li:nth-child(1) {
-    border: 2px solid #0f44a6;
+    border: 2px solid var(--crimson-red);
     color: #0f44a6;
     order: 3;
   }
@@ -807,15 +819,17 @@ main {
     order: 5;
   }
 
+  /* 
+    Sections within the list are hidden between li elements and will slide down when activated 
+    See main.js starting at line 102 for dropdown functionality
+  */
   #quick-links > ul > section {
     opacity: 0;
-    /* padding: 2rem; */
     margin: 1rem;
   }
 
   #quick-links > ul > section.active {
     opacity: 1;
-    /* padding: 2rem; */
     margin: 1rem 1rem;
   }
 
@@ -829,7 +843,6 @@ main {
  * Helpdesk section
  **********************/
 #helpdesk {
-  /* transition-behavior: allow-discrete; */
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out, margin 0.5s ease-in-out;
@@ -871,6 +884,7 @@ main {
 }
 
 
+/* slidedown animations */
 @keyframes slideDown {
   0% {
     visibility: hidden;
@@ -916,7 +930,7 @@ main {
 
 
 /**********************
- * Services
+ * Welcome
  **********************/
 
 #welcome > svg {
@@ -943,7 +957,6 @@ main {
     position: absolute;
     top: 0;
     right: 0;
-    /* background-color: rgba(255, 0, 0, 0.484); */
     scale: 1.1;
   }
 
@@ -973,10 +986,6 @@ main {
 /**********************
  * Services
  **********************/
-#services {
-  /* position: relative; */
-  /* gap: 1rem; */
-}
 
 #services > h2,
 #services > p,
@@ -1054,11 +1063,6 @@ main {
 #s-p1 {
   position: relative;
   margin-top: 1rem;
-}
-
-#guides > h2,
-#meet-the-team > h2 {
-  /* padding-left: 2rem; */
 }
 
 /**********************
@@ -1214,7 +1218,7 @@ footer > div {
 
 
 /**********************
- * Media Queries
+ * General Media Queries
  **********************/
 
 @media (min-width: 600px) {
