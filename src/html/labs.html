@@ -1,306 +1,352 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>SHS | Computer Labs</title>
+  <head>
+    <meta charset="UTF-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+    <title>SHS | Computer Labs</title>
 
     <!-- Montserrat Font Import from Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" >
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin >
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    >
 
-	<!-- styles -->
-	<link rel="stylesheet" href="../styles/reset.css">
-	<link rel="stylesheet" href="../styles/style.css">
-	<link rel="stylesheet" href="../styles/guides.css">
-  <link rel="stylesheet" href="../styles/labs.css">
+    <!-- styles -->
+    <link rel="stylesheet" href="../styles/reset.css" >
+    <link rel="stylesheet" href="../styles/style.css" >
+    <link rel="stylesheet" href="../styles/guides.css" >
+    <link rel="stylesheet" href="../styles/labs.css" >
 
+    <!-- Google maps loader -->
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC5xDc0ItWmUdwtFjQ-kKizGDRnp46Zjxg&libraries=maps,marker"
+      defer
+    ></script>
+  </head>
+  <body>
+    <!-- Header  -->
 
-
-	<!-- Google maps loader -->
-	<script
-		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC5xDc0ItWmUdwtFjQ-kKizGDRnp46Zjxg&libraries=maps,marker"
-		defer
-	></script>
-</head>
-<body>
-	<!-- Header  -->
-
-     <header>
-      <a id="logo" href="/SHS/"></a>
-      <nav>
-        <div id="nav-hamburger">
+    <header aria-label="Main Header">
+      <a id="logo" href="/SHS/" aria-label="logo"></a>
+      <nav aria-label="Main Navigation">
+        <div id="nav-hamburger" tabindex="0">
           <!-- Hamburger SVG -->
-          <svg
-            class="nav-icon active"
-            id="hamburger"
-            width="36"
-            height="34"
-            viewBox="0 0 36 34"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              id="path1"
-              d="M2.5 2H33.5"
-              stroke="#4D4D4D"
-              stroke-width="4"
-              stroke-linecap="round"
-            />
-            <path
-              id="path2"
-              d="M2.5 17H33.5"
-              stroke="#4D4D4D"
-              stroke-width="4"
-              stroke-linecap="round"
-            />
-            <path
-              id="path3"
-              d="M2.5 32H33.5"
-              stroke="#4D4D4D"
-              stroke-width="4"
-              stroke-linecap="round"
-            />
-          </svg>
-
-          <!-- Exit SVG -->
-          <svg
-            id="exit-icon"
-            class="nav-icon"
-            width="60"
-            height="60"
-            viewBox="0 0 60 60"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M14.7757 44.7523L45.1665 15.1893M14.7757 15.1889L45.1665 44.7522"
-              stroke="#4D4D4D"
-              stroke-width="4"
-              stroke-linecap="round"
-            />
-          </svg>
+          <button class="icon-button" aria-label="Navigation Menu Toggle">
+            <svg
+              class="nav-icon active"
+              id="hamburger"
+              width="36"
+              height="34"
+              viewBox="0 0 36 34"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-label="Hamburger menu icon"
+            >
+              <path
+                id="path1"
+                d="M2.5 2H33.5"
+                stroke="#4D4D4D"
+                stroke-width="4"
+                stroke-linecap="round"
+              />
+              <path
+                id="path2"
+                d="M2.5 17H33.5"
+                stroke="#4D4D4D"
+                stroke-width="4"
+                stroke-linecap="round"
+              />
+              <path
+                id="path3"
+                d="M2.5 32H33.5"
+                stroke="#4D4D4D"
+                stroke-width="4"
+                stroke-linecap="round"
+              />
+            </svg>
+            <!-- Exit SVG -->
+            <svg
+              id="exit-icon"
+              class="nav-icon"
+              width="60"
+              height="60"
+              viewBox="0 0 60 60"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-label="Exit navigation menu icon"
+            >
+              <path
+                d="M14.7757 44.7523L45.1665 15.1893M14.7757 15.1889L45.1665 44.7522"
+                stroke="#4D4D4D"
+                stroke-width="4"
+                stroke-linecap="round"
+              />
+            </svg>
+          </button>
         </div>
 
         <!-- nav links -->
         <div id="nav-links">
           <ul>
-            <li><a href="/SHS/">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="guides.html">Guides</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="/SHS/src/index.html">Home</a></li>
+            <li><a href="/SHS/src/html/about.html">About</a></li>
+            <li><a href="/SHS/src/html/guides.html">Guides</a></li>
+            <li><a href="/SHS/src/html/contact.html">Contact</a></li>
           </ul>
+        </div>
       </nav>
     </header>
-    <!---------------->
 
-	<!-- Main content -->
-	 <main>
-
-    <!-- 
+    <!-- Main content -->
+    <main>
+      <!-- 
          There are 3 labs in VUB
         1. VUB 100
         2. VUB 202 
         3. VUB 207
       -->
 
-		<section class="lab-section">
-			<div>
-				<h1>Computer Labs</h1>
-				<p>
-					Welcome to the Computer Labs page! Here, you can find information about
-					the computer labs available at WSU Vancouver. Our labs are equipped with
-					the latest technology and software to support your academic needs.
-				</p>
-			</div>
+      <section class="lab-section">
+        <div>
+          <h1>Computer Labs</h1>
+          <p>
+            Welcome to the Computer Labs page! Here, you can find information
+            about the computer labs available at WSU Vancouver. Our labs are
+            equipped with the latest technology and software to support your
+            academic needs.
+          </p>
+        </div>
 
-			<div>
-				<h3>Available Labs</h3>
-				<ul id="lab-list">
+        <div>
+          <h3>Available Labs</h3>
 
-          <!-- MMC -->
-					<li tabindex="0">
-						<svg class="caret" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img">
-							<polyline points="5,7 10,12 15,7" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" />
-						</svg>
-						<strong>Multimedia Classroom Building</strong> 
-					</li>
-					<section class="slide-down">
-            <h3>Multimedia Classroom Building</h3>
-            <p>
-              The Multimedia Classroom Building is equipped with state-of-the-art
-              technology to enhance your learning experience. It features high-speed
-              internet, multimedia projectors, and comfortable seating arrangements.
-            </p>
-
-            <div>
-              <h4>Location</h4>
-              <!-- Google map -->
-              <gmp-map
-                center="45.73042355377889,-122.63667979525182"
-                zoom="18"
-                map-id="lab-map"
-              >
-                <gmp-advanced-marker
-                  position="45.73042355377889,-122.63667979525182"
-                  title="MMC"
-                ></gmp-advanced-marker>
-              </gmp-map>
-            </div>
-					</section>
-
-          <!-- VUB -->
-					<li tabindex="0">
-						<svg class="caret" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img">
-							<polyline points="5,7 10,12 15,7" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" />
-						</svg>
-						<strong>Undergraduate Building</strong> 
-					</li>
-					<section class="slide-down">
-            <div>
-              <h3>Undergraduate Building</h3>
+          <!-- updated accordion -->
+          <div id="accordion-container">
+            <button class="accordion" tabindex="0">Multimedia Classroom Building</button>
+            <div class="panel">
+              <h3>Multimedia Classroom Building</h3>
               <p>
-                The Undergraduate Building offers a variety of computer labs with
-                specialized software for different disciplines. There are a total of
-                3 labs available to students in this building
+                The Multimedia Classroom Building is equipped with
+                state-of-the-art technology to enhance your learning experience.
+                It features high-speed internet, multimedia projectors, and
+                comfortable seating arrangements.
               </p>
-            </div>
-            <div class="lab-images">
-              <div>
-                <h4>VUB 100</h4>
-                <img
-                  src="../../images/labs/vub-100.jpg"
-                  alt="Multimedia Classroom Building"
-                  class="lab-image float-right"
-                />
-              </div>
-              <div>
-                <h4>VUB 202</h4>
-                <img
-                  src="../../images/labs/vub-202.jpg"
-                  alt="Multimedia Classroom Building"
-                  class="lab-image"
-                />
-              </div>
-              <div>
-                <h4>VUB 207</h4>
-                <img
-                  src="../../images/labs/vub-207.jpg"
-                  alt="Multimedia Classroom Building"
-                  class="lab-image"
-                />
 
+              <div>
+                <h4>Location</h4>
+                <!-- Google map -->
+                <gmp-map
+                  center="45.73042355377889,-122.63667979525182"
+                  zoom="18"
+                  map-id="lab-map"
+                >
+                  <gmp-advanced-marker
+                    position="45.73042355377889,-122.63667979525182"
+                    title="MMC"
+                  ></gmp-advanced-marker>
+                </gmp-map>
               </div>
             </div>
 
-            <div>
-              <h4>Location</h4>
-              <!-- Google map -->
-              <gmp-map
-                center="45.72991418986458,-122.63591070272558"
-                zoom="17"
-                map-id="lab-map"
+            <button class="accordion" tabindex="0">Undergraduate Building</button>
+            <div class="panel">
+              <div>
+                <h3>Undergraduate Building</h3>
+                <p>
+                  The Undergraduate Building offers a variety of computer labs
+                  with specialized software for different disciplines. There are
+                  a total of 3 labs available to students in this building
+                </p>
+              </div>
+              <div class="lab-images">
+                <div>
+                  <h4>VUB 100</h4>
+                  <img
+                    src="../../images/labs/vub-100.jpg"
+                    alt="Multimedia Classroom Building"
+                    class="lab-image float-right"
+                  >
+                </div>
+                <div>
+                  <h4>VUB 202</h4>
+                  <img
+                    src="../../images/labs/vub-202.jpg"
+                    alt="Multimedia Classroom Building"
+                    class="lab-image"
+                  >
+                </div>
+                <div>
+                  <h4>VUB 207</h4>
+                  <img
+                    src="../../images/labs/vub-207.jpg"
+                    alt="Multimedia Classroom Building"
+                    class="lab-image"
+                  >
+                </div>
+              </div>
+
+              <div>
+                <h4>Location</h4>
+                <!-- Google map -->
+                <gmp-map
+                  center="45.72991418986458,-122.63591070272558"
+                  zoom="17"
+                  map-id="lab-map"
+                >
+                  <gmp-advanced-marker
+                    position="45.72991418986458,-122.63591070272558"
+                    title="VUB"
+                  ></gmp-advanced-marker>
+                </gmp-map>
+              </div>
+            </div>
+
+            <button class="accordion" tabindex="0">Engineering and Computer Science</button>
+            <div class="panel">
+              <h3>Engineering and Computer Science</h3>
+              <p>
+                The Engineering and Computer Science lab is designed for
+                students in technical fields. It provides access to advanced
+                computing resources, programming environments, and engineering
+                software.
+              </p>
+
+              <div>
+                <h4>Location</h4>
+                <!-- Google map -->
+                <gmp-map
+                  center="45.73262361568419,-122.63469397653841"
+                  zoom="17"
+                  map-id="lab-map"
+                >
+                  <gmp-advanced-marker
+                    position="45.73262361568419,-122.63469397653841"
+                    title="Seattle, WA"
+                  ></gmp-advanced-marker>
+                </gmp-map>
+              </div>
+            </div>
+          </div>
+         
+        </div>
+      </section>
+      <section class="guides">
+        <div>
+          <h3>Featured Guides</h3>
+          <ul>
+            <li><a href="wifi.html">Wifi Access</a></li>
+            <li><a href="microsoft.html">Microsoft Suite Installation</a></li>
+            <li><a href="account-access.html">Account Access</a></li>
+            <li><a href="labs.html" class="active">Computer Labs</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Video Guides</h3>
+          <ul>
+            <li>
+              <a
+                target="_blank"
+                href="https://www.youtube.com/watch?v=V_nNkaQ5YdI"
+                >Set up OKTA Verify</a
               >
-                <gmp-advanced-marker
-                  position="45.72991418986458,-122.63591070272558"
-                  title="VUB"
-                ></gmp-advanced-marker>
-              </gmp-map>
-
-            </div>
-
-					</section>
-					<li tabindex="0">
-						<svg class="caret" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img">
-							<polyline points="5,7 10,12 15,7" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" />
-						</svg>
-						<strong>Engineering and Computer Science</strong> 
-					</li>
-					<section class="slide-down">
-            <h3>Engineering and Computer Science</h3>
-            <p>
-              The Engineering and Computer Science lab is designed for students in
-              technical fields. It provides access to advanced computing resources,
-              programming environments, and engineering software.
-            </p>
-
-            <div>
-              <h4>Location</h4>
-              <!-- Google map -->
-              <gmp-map
-                center="45.73262361568419,-122.63469397653841"
-                zoom="17"
-                map-id="lab-map"
+            </li>
+            <li>
+              <a
+                target="_blank"
+                href="https://www.youtube.com/watch?v=qM3mOsV9dCA&t=1s"
+                >Install Global Protect</a
               >
-                <gmp-advanced-marker
-                  position="45.73262361568419,-122.63469397653841"
-                  title="Seattle, WA"
-                ></gmp-advanced-marker>
-              </gmp-map>
+            </li>
+            <li>
+              <a
+                target="_blank"
+                href="https://www.youtube.com/watch?v=QIOkqtz2kkQ"
+                >Enrolling in Classes</a
+              >
+            </li>
+            <li>
+              <a
+                target="_blank"
+                href="https://www.youtube.com/watch?v=T-GPSdqM0KU"
+                >Create Daily Attestation</a
+              >
+            </li>
+            <li>
+              <a
+                target="_blank"
+                href="https://www.youtube.com/watch?v=SHXLXqsaXx8&t=1s"
+                >Navigating the WSU Site</a
+              >
+            </li>
+            <li>
+              <a
+                target="_blank"
+                href="https://www.youtube.com/watch?v=G3Z35tu-6Ho"
+                >Change your Password</a
+              >
+            </li>
+          </ul>
+        </div>
+      </section>
+    </main>
 
-            </div>
-
-					</section>
-				</ul>
-			</div>
-		</section>
-		<section class="guides">
-			<div>
-				<h3>Featured Guides</h3>
-				<ul>
-					<li><a href="wifi.html">Wifi Access</a></li>
-					<li><a href="microsoft.html">Microsoft Suite Installation</a></li>
-					<li><a href="account-access.html">Account Access</a></li>
-					<li><a href="labs.html" class="active">Computer Labs</a></li>
-				</ul>	
-			</div>
-			<div>
-				<h3>Video Guides</h3>
-				<ul>
-					<li><a target="_blank" href="https://www.youtube.com/watch?v=V_nNkaQ5YdI">Set up OKTA Verify</a></li>
-					<li><a target="_blank" href="https://www.youtube.com/watch?v=qM3mOsV9dCA&t=1s">Install Global Protect</a></li>
-					<li><a target="_blank" href="https://www.youtube.com/watch?v=QIOkqtz2kkQ">Enrolling in Classes</a></li>
-					<li><a target="_blank" href="https://www.youtube.com/watch?v=T-GPSdqM0KU">Create Daily Attestation</a></li>
-					<li><a target="_blank" href="https://www.youtube.com/watch?v=SHXLXqsaXx8&t=1s">Navigating the WSU Site</a></li>
-					<li><a target="_blank" href="https://www.youtube.com/watch?v=G3Z35tu-6Ho">Change your Password</a></li>
-				</ul>
-			</div>
-
-		</section>
-
-
-	 </main>
-
-	 <!-- Footer -->
+    <!-- Footer -->
     <footer>
       <div class="fine-print flex footer-info-container">
         <div class="flex column">
           <h4>Contact Us</h4>
-          <p><a href="tel:+3605469770" class="contact-link">(360) 546-9770</a></p>
-          <p><a href="mailto:van.student.help@wsu.edu" class="contact-link">van.student.help@wsu.edu</a></p>
+          <p>
+            <a href="tel:+3605469770" class="contact-link">(360) 546-9770</a>
+          </p>
+          <p>
+            <a href="mailto:van.student.help@wsu.edu" class="contact-link"
+              >van.student.help@wsu.edu</a
+            >
+          </p>
         </div>
         <div>
           <h4>Hours of Operation</h4>
           <p>8:00 AM - 5:00 PM</p>
           <p>Monday - Friday</p>
-
         </div>
       </div>
       <div class="soc-cop-container">
         <div id="socials" class="flex column footer-socials-container">
           <h4>Follow our Socials</h4>
-          <div >
-            <a href="https://www.instagram.com/wsuvstudentshelpingstudents/" target="_blank">
-              <img class="social-icon" src="../../images/instagram.png" alt="Instagram" />
+          <div>
+            <a
+              href="https://www.instagram.com/wsuvstudentshelpingstudents/"
+              target="_blank"
+            >
+              <img
+                class="social-icon"
+                src="../../images/instagram.png"
+                alt="Instagram"
+              >
               <span class="social-background"></span>
             </a>
-            <a href="https://www.linkedin.com/company/students-helping-students-wsu-vancouver/" target="_blank">
-              <img class="social-icon" src="../../images/linkedin.png" alt="LinkedIn" />
+            <a
+              href="https://www.linkedin.com/company/students-helping-students-wsu-vancouver/"
+              target="_blank"
+            >
+              <img
+                class="social-icon"
+                src="../../images/linkedin.png"
+                alt="LinkedIn"
+              >
               <span class="social-background"></span>
             </a>
-            <a href="https://www.facebook.com/WSUStudentsHelpingStudents/" target="_blank">
-              <img class="social-icon" src="../../images/youtube.png" alt="Facebook" />
+            <a
+              href="https://www.facebook.com/WSUStudentsHelpingStudents/"
+              target="_blank"
+            >
+              <img
+                class="social-icon"
+                src="../../images/youtube.png"
+                alt="Facebook"
+              >
               <span class="social-background"></span>
             </a>
           </div>
@@ -309,7 +355,7 @@
       </div>
     </footer>
 
-	<script type="module" src="../scripts/nav.js"></script>
-	<script type="module" src="../scripts/labs.js"></script>
-</body>
+    <script type="module" src="../scripts/nav.js"></script>
+    <script type="module" src="../scripts/labs.js"></script>
+  </body>
 </html>

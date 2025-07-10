@@ -1,97 +1,58 @@
 console.log("Labs script loaded");
 
-const list = document.querySelector("#lab-list").getElementsByTagName("li");
-const sections = document.querySelector("#lab-list").getElementsByTagName("section");
-
-
-console.log(sections);
-
-for (let i = 0; i < list.length; i++) {
-  const item = list.item(i);
-  if (item) {
-	item.addEventListener("mouseup", labClicked);
-	item.addEventListener("focus", labClicked);
-  }
-}
+var acc = document.getElementsByClassName("accordion");
+var i;
 
 let lastInteractionType = null;
 
 // Listen for keyboard interactions (tab)
-document.addEventListener('keydown', (e) => {
-  if (e.key === 'Tab') {
-    lastInteractionType = 'keyboard';
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Tab") {
+    lastInteractionType = "keyboard";
   }
 });
 
 // Listen for mouse interactions
-document.addEventListener('mousedown', () => {
-  lastInteractionType = 'mouse';
+document.addEventListener("mousedown", () => {
+  lastInteractionType = "mouse";
 });
 
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("focus", expandAccordion);
 
-function labClicked(e) {
-
-	
-	// When user clicks a quick link, the focus event is triggered
-	// If the last interaction was a mouse click, ignore the focus event
-	if( e.type === "focus" && lastInteractionType === 'mouse') {
-		return;
-	}
-
-	const el = e.target;
-	const active = el.classList.contains("active");
-	removeActiveClasses(list); 
-	collapseSections(e, active);
-	rotateCarets(e, active); 
-	expandSections(e, active);
-
+  acc[i].addEventListener("click", expandAccordion);
 }
 
-function removeActiveClasses(list) {
-	for (let i = 0; i < list.length; i++) {
-		const item = list.item(i);
-		if (item) {
-			item.classList.remove("active");
+function expandAccordion(e) {
+  // When user clicks a quick link, the focus event is triggered
+  // If the last interaction was a mouse click, ignore the focus event
+  if (e.type === "focus" && lastInteractionType === "mouse") {
+    return;
+  }
 
-			// remove active class from carets
-			item.firstElementChild.classList.remove("active");
-		}
-	}
-	// document.body.style.height = "100%";
+  const isActive = e.target.classList.contains("active") ? true : false;
+  if (isActive) {
+    deactivateAll();
+    return;
+  }
 
-	for(let i = 0; i < sections.length; i++) {
-		const section = sections.item(i);
-		if (section) {
-			section.classList.remove("active");
-			section.style.maxHeight = null;
-		}
-	}
+  deactivateAll();
+
+  this.classList.toggle("active");
+  var panel = this.nextElementSibling;
+  panel.classList.toggle("active");
+  if (panel.style.maxHeight) {
+    panel.style.maxHeight = null;
+  } else {
+    panel.style.maxHeight = panel.scrollHeight + "px";
+  }
 }
 
-function rotateCarets(e, active) {
-	if(!active) {
-		e.target.firstElementChild.classList.toggle("active");
-		e.target.classList.toggle("active");
-	}
-}
-
-function collapseSections(e, active) {
-	// section is the next element sibling of the clicked item
-	const section = e.target.nextElementSibling;
-	section.classList.remove("active");
-	section.style.maxHeight = null;
-}
-
-function expandSections(e, active) {
-	// section is the next element sibling of the clicked item
-	const section = e.target.nextElementSibling;
-	if (section) {
-		if (active) {
-			section.classList.remove("active");
-			section.style.maxHeight = null;
-		} else {
-			section.classList.add("active");
-			section.style.maxHeight = section.scrollHeight + "px";
-		}
-	}
+function deactivateAll() {
+  for (i = 0; i < acc.length; i++) {
+    acc[i].classList.remove("active");
+    var panel = acc[i].nextElementSibling;
+    panel.classList.remove("active");
+    panel.style.maxHeight = null;
+  }
 }

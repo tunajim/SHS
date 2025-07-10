@@ -32,8 +32,14 @@ import { interpolate, interpolateAll } from "flubber";
 const hamburger = document.querySelector("#hamburger");
 const exitIcon = document.querySelector("#exit-icon");
 
-hamburger.addEventListener("mouseup", toggleNav);
-exitIcon.addEventListener("mouseup", toggleNav);
+const iconButtons = document.querySelectorAll(".icon-button");
+// Add event listeners to icon buttons
+iconButtons.forEach((button) => {
+	button.addEventListener("click", toggleNav);
+});
+
+// hamburger.addEventListener("mouseup", toggleNav);
+// exitIcon.addEventListener("mouseup", toggleNav);
 
 function toggleNav() {
 	if (!hamburger.classList.contains("active")) {

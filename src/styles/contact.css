@@ -30,6 +30,10 @@
   align-items: center;
 }
 
+.contact-card > button > a {
+  color: white;
+}
+
 button {
 	border: none;
 	outline: none;

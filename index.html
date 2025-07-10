@@ -1,290 +1,403 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8">
 
     <!-- favicon -->
-    <link rel="icon" type="image/png" href="/images/favicon.png" />
+    <link rel="icon" type="image/png" href="/images/favicon.png" >
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
     <title>Students Helping Students</title>
 
-
     <!-- Montserrat Font Import from Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" >
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin >
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    >
 
     <!-- Google maps script -->
-    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC5xDc0ItWmUdwtFjQ-kKizGDRnp46Zjxg&callback=console.debug&libraries=maps,marker&v=beta">
-    </script>
+    <script
+      async
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC5xDc0ItWmUdwtFjQ-kKizGDRnp46Zjxg&callback=console.debug&libraries=maps,marker&v=beta"
+    ></script>
 
     <!-- Swiper -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    >
 
-    <link rel="stylesheet" href="./src/styles/reset.css">
-    <link rel="stylesheet" href="./src/styles/style.css">
+    <link rel="stylesheet" href="./src/styles/reset.css" >
+    <link rel="stylesheet" href="./src/styles/style.css" >
+    <link rel="stylesheet" href="./src/styles/accordion.css" >
 
   </head>
   <body>
-
     <!-- Header  -->
 
-     <header aria-label="Main Header">
+    <header aria-label="Main Header">
       <a id="logo" href="/SHS/" aria-label="logo"></a>
-      <nav aria-label="navigation" role="navigation" aria-label="Main Navigation">
-        <div id="nav-hamburger">
+      <nav aria-label="Main Navigation">
+        <div id="nav-hamburger" tabindex="0">
           <!-- Hamburger SVG -->
-          <svg
-            class="nav-icon active"
-            id="hamburger"
-            width="36"
-            height="34"
-            viewBox="0 0 36 34"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              id="path1"
-              d="M2.5 2H33.5"
-              stroke="#4D4D4D"
-              stroke-width="4"
-              stroke-linecap="round"
-            />
-            <path
-              id="path2"
-              d="M2.5 17H33.5"
-              stroke="#4D4D4D"
-              stroke-width="4"
-              stroke-linecap="round"
-            />
-            <path
-              id="path3"
-              d="M2.5 32H33.5"
-              stroke="#4D4D4D"
-              stroke-width="4"
-              stroke-linecap="round"
-            />
-          </svg>
-
+           <button class="icon-button" aria-label="Navigation Menu Toggle">
+            <svg
+              class="nav-icon active"
+              id="hamburger"
+              width="36"
+              height="34"
+              viewBox="0 0 36 34"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-label="Hamburger menu icon"
+            >
+              <path
+                id="path1"
+                d="M2.5 2H33.5"
+                stroke="#4D4D4D"
+                stroke-width="4"
+                stroke-linecap="round"
+              />
+              <path
+                id="path2"
+                d="M2.5 17H33.5"
+                stroke="#4D4D4D"
+                stroke-width="4"
+                stroke-linecap="round"
+              />
+              <path
+                id="path3"
+                d="M2.5 32H33.5"
+                stroke="#4D4D4D"
+                stroke-width="4"
+                stroke-linecap="round"
+              />
+            </svg>
           <!-- Exit SVG -->
-          <svg
-            id="exit-icon"
-            class="nav-icon"
-            width="60"
-            height="60"
-            viewBox="0 0 60 60"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M14.7757 44.7523L45.1665 15.1893M14.7757 15.1889L45.1665 44.7522"
-              stroke="#4D4D4D"
-              stroke-width="4"
-              stroke-linecap="round"
-            />
-          </svg>
+            <svg
+              id="exit-icon"
+              class="nav-icon"
+              width="60"
+              height="60"
+              viewBox="0 0 60 60"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-label="Exit navigation menu icon"
+            >
+              <path
+                d="M14.7757 44.7523L45.1665 15.1893M14.7757 15.1889L45.1665 44.7522"
+                stroke="#4D4D4D"
+                stroke-width="4"
+                stroke-linecap="round"
+              />
+            </svg>
+
+           </button>
         </div>
 
         <!-- nav links -->
         <div id="nav-links">
           <ul>
-            <li><a href="#home">Home</a></li>
+            <li><a href="/SHS/src/index.html">Home</a></li>
             <li><a href="/SHS/src/html/about.html">About</a></li>
             <li><a href="/SHS/src/html/guides.html">Guides</a></li>
             <li><a href="/SHS/src/html/contact.html">Contact</a></li>
           </ul>
+        </div>
       </nav>
     </header>
-    <!---------------->
 
     <!-- Main -->
     <main aria-label="Main Content" id="home">
-
       <!-- Hero banner -->
-      <div id="hero" aria-label="Hero Banner with Search">
+      <div id="hero">
         <div>
-          <h1>
-            Students Helping Students
-          </h1>
+          <h1>Students Helping Students</h1>
           <p>WSUV Peer-led Tech Support</p>
-
         </div>
 
         <!-- Google Search Embed -->
-        <script async src="https://cse.google.com/cse.js?cx=35aae8e09fb784af4"></script>
-        <label for="google-search"></label>
-        <div id="google-search" class="gcse-search" aria-label="Google Search Embed"></div>
+        <script
+          async
+          src="https://cse.google.com/cse.js?cx=35aae8e09fb784af4"
+        ></script>
+        <div>
+          <!-- <label for="google-search">What can we help with?</label> -->
+          <div
+            id="google-search"
+            class="gcse-search"
+          ></div>
+        </div>
       </div>
-      <!---------------->
 
-      <!-- Quick links -->
-      <section id="quick-links" class="padding" aria-label="SHS Information">
-       <ul>
-        <!-- Zoom link -->
-        <li tabindex="0">
-          <img class="ql-icon" src="./images/Product_Rooms_Bloom_Icon-Solo.png" alt="Zoom Logo" />
-          <p>Zoom HelpDesk</p>
-          <svg class="caret" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img">
-            <polyline points="5,7 10,12 15,7" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" />
-          </svg>
-        </li>
-        <section id="helpdesk" class="slide-down info">
-            <h2>Zoom HelpDesk</h2>
-            <p>
-              If you need immediate assistance, feel free to join our Zoom HelpDesk.  We have tech’s available Monday - Friday from 8am to 5pm.  Press the red button below to be placed into the call.
-            </p>
-          <div class="announcement">
-            <h3>Updated Photo ID Requirement</h3>
-            <p>WSU now requires that all students and faculty who have account related issues will need to show valid Photo ID.  This can be your Coug Card, Driver's license, Passport, or other form of legal Photo ID.</p>
-          </div>
-          <a class="main-button" href="https://wsu.zoom.us/j/3605469770?pwd=ZEhtcXpQVnFnQk5YM0ZqWk44VEpmUT09" target="_blank">Join Zoom HelpDesk</a>
-        </section>
-        <!---------------->
+      <!-- updated accordion section -->
+      <div class="accordion-section" role="region" aria-label="Accordion Section">
+        <button class="accordion" tabindex="0">
+          <img class="ql-icon" src="/images/Product_Rooms_Bloom_Icon-Solo.png" alt="Zoom Logo">
+          Zoom Helpdesk
+        </button>
+        <div class="panel">
+          <h2>Zoom HelpDesk</h2>
+              <p>
+                If you need immediate assistance, feel free to join our Zoom
+                HelpDesk. We have tech’s available Monday - Friday from 8am to
+                5pm. Press the red button below to be placed into the call.
+              </p>
+              <div class="announcement">
+                <h3>Updated Photo ID Requirement</h3>
+                <p>
+                  WSU now requires that all students and faculty who have account
+                  related issues will need to show valid Photo ID. This can be
+                  your Coug Card, Driver's license, Passport, or other form of
+                  legal Photo ID.
+                </p>
+              </div>
+              <a
+                class="main-button"
+                href="https://wsu.zoom.us/j/3605469770?pwd=ZEhtcXpQVnFnQk5YM0ZqWk44VEpmUT09"
+                target="_blank"
+                >Join Zoom HelpDesk</a
+              >
+        </div>
 
-        <!-- Appointments -->
-        <li tabindex="0">
-          <img class="ql-icon" src="./images//Calendar with Checkmark, appointment, schedule, booking, date.svg" alt="appointment icon" />
-          <p>Appointments</p>
-          <svg class="caret" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img">
-            <polyline points="5,7 10,12 15,7" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" />
-          </svg>
-        </li>
-        <section id="appointments" class="slide-down info"> 
-          <h2>Appointments</h2> 
-          <p> Our student team offers personalized help with everything from troubleshooting to tutorials.  The button below takes you to the Microsoft Bookings scheduling tool.  Once there, pick an available slot, tell us what you need, and we’ll see you soon—virtually or face-to-face.  </p> 
-          <a class="main-button" href="https://outlook.office365.com/book/StudentsHelpingStudents1@email.wsu.edu/?ismsaljsauthenabled=true" target="_blank">
-            Schedule an appointment
-          </a> 
-        </section>
-        <!---------------->
+        <button class="accordion" tabindex="0">
+          <img class="ql-icon" src="/images/calendar.svg" alt="calendar">
+          Appointments
+        </button>
+        <div class="panel">
+          <h2>Appointments</h2>
+              <p>
+                Our student team offers personalized help with everything from
+                troubleshooting to tutorials. The button below takes you to the
+                Microsoft Bookings scheduling tool. Once there, pick an available
+                slot, tell us what you need, and we’ll see you soon—virtually or
+                face-to-face.
+              </p>
+              <a
+                class="main-button"
+                href="https://outlook.office365.com/book/StudentsHelpingStudents1@email.wsu.edu/?ismsaljsauthenabled=true"
+                target="_blank"
+              >
+                Schedule an appointment
+              </a>
+        </div>
 
-        <!-- Services -->
-        <li tabindex="0">
-          <img class="ql-icon" src="./images/guide,manual,education,information,info,book.svg" alt="services icon" />
-          <p>Services</p>
-          <svg class="caret" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img">
-            <polyline points="5,7 10,12 15,7" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" />
-          </svg>
-        </li>
-        <section id="services" class="slide-down info">
+        <button class="accordion" tabindex="0">
+          <img class="ql-icon" src="/images/support.svg" alt="Support Icon">
+          Services
+        </button>
+        <div class="panel">
           <h2>Services</h2>
           <p>
-            As students, we know the importance of functional technology to get class work done. We believe that as a WSU  Vancouver student, you have the right to ask for help with any of your  devices and as trained technicians, we’ll try our best to fix them.
+            As students, we know the importance of functional technology to
+            get class work done. We believe that as a WSU Vancouver student,
+            you have the right to ask for help with any of your devices and as
+            trained technicians, we’ll try our best to fix them.
           </p>
 
           <ul>
-            <li class="no-click">✔ Mac/PC/Mobile</li> 
-            <li class="no-click">✔ Help signing into WSU accounts</li>  
-            <li class="no-click">✔ Username and password help</li>  
+            <li class="no-click">✔ Mac/PC/Mobile</li>
+            <li class="no-click">✔ Help signing into WSU accounts</li>
+            <li class="no-click">✔ Username and password help</li>
             <li class="no-click">✔ Canvas help</li>
-            <li class="no-click">✔ WSU-specific software</li> 
-            <li class="no-click">✔ PC configuration</li>  
-            <li class="no-click">✔ Hardware troubleshooting</li>  
-            <li class="no-click">✔ Speed up slow computers</li> 
-            <li class="no-click">& Much more!</li> 
+            <li class="no-click">✔ WSU-specific software</li>
+            <li class="no-click">✔ PC configuration</li>
+            <li class="no-click">✔ Hardware troubleshooting</li>
+            <li class="no-click">✔ Speed up slow computers</li>
+            <li class="no-click">& Much more!</li>
           </ul>
-        </section>
-        <!---------------->
+        </div>
 
-        <!-- Guides -->
-        <li tabindex="0">
-          <img class="ql-icon" src="./images/support,help,computer,customer service,online.svg" alt="guide icon" />
-          <p>Guides</p> 
-          <svg class="caret" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img">
-            <polyline points="5,7 10,12 15,7" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" />
-          </svg>
-        </li>
-        <section id="guides" class="slide-down info">
-          <div>
-            <h2>Guides</h2>
-            <p>
-              The following are common tech issues that students face.  These guides are available 24/7 so that you can troubleshoot issues that might arise.  If you are still having issues, schedule an appointment with us!
-            </p>
+        <button class="accordion" tabindex="0">
+          <img class="ql-icon" src="/images/guide.svg" alt="Guide Icon">
+          Guides
+        </button>
+        <div class="panel">
+          <h2>Guides</h2>
+          <p>
+            The following are common tech issues that students face. These
+            guides are available 24/7 so that you can troubleshoot issues
+            that might arise. If you are still having issues, schedule an
+            appointment with us!
+          </p>
+            <div>
+              <h3>Tutorials</h3>
+              <ul class="link-list">
+                <li class="no-click">
+                  <a href="/SHS/src/html/wifi.html">Wifi Access</a>
+                </li>
+                <li class="no-click">
+                  <a href="/SHS/src/html/microsoft.html"
+                    >Microsoft Suite Installation</a
+                  >
+                </li>
+                <li class="no-click">
+                  <a href="/SHS/src/html/account-access.html">Account Access</a>
+                </li>
+                <li class="no-click">
+                  <a href="/SHS/src/html/labs.html">Computer Labs</a>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h3>Video Tutorials</h3>
+              <ul class="link-list">
+                <li class="no-click">
+                  <a
+                    target="_blank"
+                    href="https://www.youtube.com/watch?v=V_nNkaQ5YdI"
+                    >Set up OKTA Verify</a
+                  >
+                </li>
+                <li class="no-click">
+                  <a
+                    target="_blank"
+                    href="https://www.youtube.com/watch?v=qM3mOsV9dCA&t=1s"
+                    >Install Global Protect</a
+                  >
+                </li>
+                <li class="no-click">
+                  <a
+                    target="_blank"
+                    href="https://www.youtube.com/watch?v=QIOkqtz2kkQ"
+                    >Enrolling in Classes</a
+                  >
+                </li>
+                <li class="no-click">
+                  <a
+                    target="_blank"
+                    href="https://www.youtube.com/watch?v=T-GPSdqM0KU"
+                    >Create Daily Attestation</a
+                  >
+                </li>
+                <li class="no-click">
+                  <a
+                    target="_blank"
+                    href="https://www.youtube.com/watch?v=SHXLXqsaXx8&t=1s"
+                    >Navigating the WSU Site</a
+                  >
+                </li>
+                <li class="no-click">
+                  <a
+                    target="_blank"
+                    href="https://www.youtube.com/watch?v=G3Z35tu-6Ho"
+                    >Change your Password</a
+                  >
+                </li>
+              </ul>
+            </div>
+        </div>
 
-          </div>
-
-          <div>
-            <h3>Tutorials</h3>
-            <ul class="link-list">
-              <li class="no-click"><a href="/SHS/src/html/wifi.html">Wifi Access</a></li>
-              <li class="no-click"><a href="/SHS/src/html/microsoft.html">Microsoft Suite Installation</a></li>
-              <li class="no-click"><a href="/SHS/src/html/account-access.html">Account Access</a></li>
-              <li class="no-click"><a href="/SHS/src/html/labs.html">Computer Labs</a></li>
-            </ul>
-          </div>
-          <div>
-            <h3>Video Tutorials</h3>
-            <ul class="link-list">
-              <li class="no-click"><a target="_blank" href="https://www.youtube.com/watch?v=V_nNkaQ5YdI">Set up OKTA Verify</a></li>
-              <li class="no-click"><a target="_blank" href="https://www.youtube.com/watch?v=qM3mOsV9dCA&t=1s">Install Global Protect</a></li>
-              <li class="no-click"><a target="_blank" href="https://www.youtube.com/watch?v=QIOkqtz2kkQ">Enrolling in Classes</a></li>
-              <li class="no-click"><a target="_blank" href="https://www.youtube.com/watch?v=T-GPSdqM0KU">Create Daily Attestation</a></li>
-              <li class="no-click"><a target="_blank" href="https://www.youtube.com/watch?v=SHXLXqsaXx8&t=1s">Navigating the WSU Site</a></li>
-              <li class="no-click"><a target="_blank" href="https://www.youtube.com/watch?v=G3Z35tu-6Ho">Change your Password</a></li>
-            </ul>
-          </div>
-        </section>
-        <!---------------->
-
-        <!-- Contact -->
-        <li tabindex="0">
-          <img class="ql-icon" src="./images/email,communications,mail,message,envelope,note.svg" alt="contact icon" />
-          <p>Contact</p>
-          <svg class="caret" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img">
-            <polyline points="5,7 10,12 15,7" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" />
-          </svg>
-        </li>
-        <section id="contact" class="slide-down info">
+        <button class="accordion" tabindex="0">
+          <img class="ql-icon" src="/images/email.svg" alt="Email Icon">
+          Contact
+        </button>
+        <div class="panel">
           <h2>Contact</h2>
-          <p>We’d love to hear from you! Whether you have questions, feedback, or want to learn more about our services, please reach out.</p>
+          <p>
+            We’d love to hear from you! Whether you have questions, feedback,
+            or want to learn more about our services, please reach out.
+          </p>
           <h3>Contact Information</h3>
           <ul class="flex column gap-less">
-            <li class="no-click"><span class="bold">Email:</span><a href="mailto:van.student.help@wsu.edu" class="link"> van.student.help@wsu.edu</a></li>
-            <li class="no-click"><span class="bold">Phone:</span><a href="tel:+3605469770" class="link">(360) 546-9770</a></li>
-            <li class="no-click"><span class="bold">Hours of Operation:</span><a> Monday - Friday, 8:00am - 5pm</a></li>
-            <li class="no-click"><span class="bold">Location:</span><a> VCLS 223</a></li>
-            <iframe id="map" src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d779.5626639970485!2d-122.63724395163254!3d45.73152471073074!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNDXCsDQzJzUzLjQiTiAxMjLCsDM4JzEzLjgiVw!5e0!3m2!1sen!2sus!4v1749842834904!5m2!1sen!2sus" width="600" height="450" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <li class="no-click">
+              <span class="bold">Email:</span
+              ><a href="mailto:van.student.help@wsu.edu" class="link">
+                van.student.help@wsu.edu</a
+              >
+            </li>
+            <li class="no-click">
+              <span class="bold">Phone:</span
+              ><a href="tel:+3605469770" class="link">(360) 546-9770</a>
+            </li>
+            <li class="no-click">
+              <span class="bold">Hours of Operation:</span
+              ><a> Monday - Friday, 8:00am - 5pm</a>
+            </li>
           </ul>
-        </section>
-        <!---------------->
+          <div>
+            <h3><span class="bold">Location:</span><span class="normal"> VCLS 223</span></h3>
+            <iframe
+              id="map"
+              title="Google Map of WSU Vancouver IT Department"
+              src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d779.5626639970485!2d-122.63724395163254!3d45.73152471073074!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNDXCsDQzJzUzLjQiTiAxMjLCsDM4JzEzLjgiVw!5e0!3m2!1sen!2sus!4v1749842834904!5m2!1sen!2sus"
+              width="600"
+              height="450"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            >
+            </iframe>
 
-       </ul> 
-      </section>
-      <!---------------->
+          </div>
+        </div>
 
+
+      </div>
+
+
+      
+
+     
     </main>
-    <!---------------->
 
     <!-- Footer -->
     <footer aria-label="Main Footer">
       <div class="fine-print flex footer-info-container">
-        <div class="flex column" aria-label="Contact Information">
+        <div class="flex column">
           <h4>Contact Us</h4>
-          <p aria-label="Phone number"><a href="tel:+3605469770" class="contact-link">(360) 546-9770</a></p>
-          <p aria-label="Email"><a href="mailto:van.student.help@wsu.edu" class="contact-link">van.student.help@wsu.edu</a></p>
+          <p>
+            <a href="tel:+3605469770" class="contact-link">(360) 546-9770</a>
+          </p>
+          <p>
+            <a href="mailto:van.student.help@wsu.edu" class="contact-link"
+              >van.student.help@wsu.edu</a
+            >
+          </p>
         </div>
-        <div aria-label="Location and Hours" class="flex column">
+        <div class="flex column">
           <h4>Hours of Operation</h4>
-          <p aria-label="Hours of Operation">8:00 AM - 5:00 PM</p>
-          <p aria-label="Open days">Monday - Friday</p>
-
+          <p>8:00 AM - 5:00 PM</p>
+          <p>Monday - Friday</p>
         </div>
       </div>
-      <div class="soc-cop-container" aria-label="Socials and Copyright">
+      <div class="soc-cop-container">
         <div id="socials" class="flex column footer-socials-container">
           <h4>Follow our Socials</h4>
-          <div >
-            <a href="https://www.instagram.com/wsuvshs/" target="_blank" aria-label="Instagram-Students Helping Students">
-              <img class="social-icon" src="./images/instagram.png" alt="Instagram" />
+          <div>
+            <a
+              href="https://www.instagram.com/wsuvshs/"
+              target="_blank"
+            >
+              <img
+                class="social-icon"
+                src="./images/instagram.png"
+                alt="Instagram"
+              >
               <span class="social-background"></span>
             </a>
-            <a href="https://www.linkedin.com/company/students-helping-students-wsu-vancouver/" target="_blank" aria-label="LinkedIn-Students Helping Students">
-              <img class="social-icon" src="./images/linkedin.png" alt="LinkedIn" />
+            <a
+              href="https://www.linkedin.com/company/students-helping-students-wsu-vancouver/"
+              target="_blank"
+            >
+              <img
+                class="social-icon"
+                src="./images/linkedin.png"
+                alt="LinkedIn"
+              >
               <span class="social-background"></span>
             </a>
-            <a href="https://www.youtube.com/@studentshelpingstudents3656" target="_blank" aria-label="YouTube-Students Helping Students">
-              <img class="social-icon" src="./images/youtube.png" alt="YouTube" />
+            <a
+              href="https://www.youtube.com/@studentshelpingstudents3656"
+              target="_blank"
+            >
+              <img
+                class="social-icon"
+                src="./images/youtube.png"
+                alt="YouTube"
+              >
               <span class="social-background"></span>
             </a>
           </div>
@@ -292,7 +405,6 @@
         <p class="copyright">© 2025 Students Helping Students WSUV</p>
       </div>
     </footer>
-    <!---------------->
 
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
@@ -302,7 +414,6 @@
     <script type="module" src="./src/scripts/nav.js"></script>
     <script type="module" src="./src/scripts/swiper.js"></script>
     <script type="module" src="./src/scripts/google_maps.js"></script>
-
-
+    <script type="module" src="./src/scripts/accordion.js"></script>
   </body>
 </html>

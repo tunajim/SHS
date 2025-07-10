@@ -16,74 +16,78 @@
 </head>
 <body>
     <!-- Header  -->
-
-     <header>
-      <a id="logo" href="/SHS/"></a>
-      <nav>
-        <div id="nav-hamburger">
+    <header aria-label="Main Header">
+      <a id="logo" href="/SHS/" aria-label="logo"></a>
+      <nav aria-label="Main Navigation">
+        <div id="nav-hamburger" tabindex="0">
           <!-- Hamburger SVG -->
-          <svg
-            class="nav-icon active"
-            id="hamburger"
-            width="36"
-            height="34"
-            viewBox="0 0 36 34"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              id="path1"
-              d="M2.5 2H33.5"
-              stroke="#4D4D4D"
-              stroke-width="4"
-              stroke-linecap="round"
-            />
-            <path
-              id="path2"
-              d="M2.5 17H33.5"
-              stroke="#4D4D4D"
-              stroke-width="4"
-              stroke-linecap="round"
-            />
-            <path
-              id="path3"
-              d="M2.5 32H33.5"
-              stroke="#4D4D4D"
-              stroke-width="4"
-              stroke-linecap="round"
-            />
-          </svg>
-
+           <button class="icon-button" aria-label="Navigation Menu Toggle">
+            <svg
+              class="nav-icon active"
+              id="hamburger"
+              width="36"
+              height="34"
+              viewBox="0 0 36 34"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-label="Hamburger menu icon"
+            >
+              <path
+                id="path1"
+                d="M2.5 2H33.5"
+                stroke="#4D4D4D"
+                stroke-width="4"
+                stroke-linecap="round"
+              />
+              <path
+                id="path2"
+                d="M2.5 17H33.5"
+                stroke="#4D4D4D"
+                stroke-width="4"
+                stroke-linecap="round"
+              />
+              <path
+                id="path3"
+                d="M2.5 32H33.5"
+                stroke="#4D4D4D"
+                stroke-width="4"
+                stroke-linecap="round"
+              />
+            </svg>
           <!-- Exit SVG -->
-          <svg
-            id="exit-icon"
-            class="nav-icon"
-            width="60"
-            height="60"
-            viewBox="0 0 60 60"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M14.7757 44.7523L45.1665 15.1893M14.7757 15.1889L45.1665 44.7522"
-              stroke="#4D4D4D"
-              stroke-width="4"
-              stroke-linecap="round"
-            />
-          </svg>
+            <svg
+              id="exit-icon"
+              class="nav-icon"
+              width="60"
+              height="60"
+              viewBox="0 0 60 60"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-label="Exit navigation menu icon"
+            >
+              <path
+                d="M14.7757 44.7523L45.1665 15.1893M14.7757 15.1889L45.1665 44.7522"
+                stroke="#4D4D4D"
+                stroke-width="4"
+                stroke-linecap="round"
+              />
+            </svg>
+
+           </button>
         </div>
 
         <!-- nav links -->
         <div id="nav-links">
           <ul>
-            <li><a href="/SHS/">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="guides.html">Guides</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="/SHS/src/index.html">Home</a></li>
+            <li><a href="/SHS/src/html/about.html">About</a></li>
+            <li><a href="/SHS/src/html/guides.html">Guides</a></li>
+            <li><a href="/SHS/src/html/contact.html">Contact</a></li>
           </ul>
+        </div>
       </nav>
     </header>
-    <!---------------->
+
 
 	<main>
 		<section>
@@ -163,15 +167,15 @@
           <h4>Follow our Socials</h4>
           <div >
             <a href="https://www.instagram.com/wsuvstudentshelpingstudents/" target="_blank">
-              <img class="social-icon" src="../../images/instagram.png" alt="Instagram" />
+              <img class="social-icon" src="../../images/instagram.png" alt="Instagram" >
               <span class="social-background"></span>
             </a>
             <a href="https://www.linkedin.com/company/students-helping-students-wsu-vancouver/" target="_blank">
-              <img class="social-icon" src="../../images/linkedin.png" alt="LinkedIn" />
+              <img class="social-icon" src="../../images/linkedin.png" alt="LinkedIn" >
               <span class="social-background"></span>
             </a>
             <a href="https://www.facebook.com/WSUStudentsHelpingStudents/" target="_blank">
-              <img class="social-icon" src="../../images/youtube.png" alt="Facebook" />
+              <img class="social-icon" src="../../images/youtube.png" alt="Facebook" >
               <span class="social-background"></span>
             </a>
           </div>
