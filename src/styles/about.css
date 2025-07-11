@@ -72,6 +72,7 @@ h1 {
 @media (min-width: 900px) {
 	section, #meet-the-team, .team-grid {
 		width: 800px;
+		margin: auto;
 	}
 
 	.team-grid {
